@@ -1,0 +1,434 @@
+/* ========================================
+   CASE STUDY
+   ======================================== */
+
+
+/* ========================================
+   CASE STUDY HERO
+   ======================================== */
+
+.case-study-hero {
+    padding-block-start: var(--space-20);
+}
+
+.case-study-hero__content {
+    width: 100%;
+    max-width: 900px;
+}
+
+.case-study-hero__eyebrow,
+.case-study__eyebrow {
+    margin-block-end: var(--space-4);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+
+    color: var(--color-accent);
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.case-study-hero__title {
+    max-width: 14ch;
+    margin: 0;
+}
+
+.case-study-hero__description {
+    max-width: 65ch;
+    margin-block-start: var(--space-6);
+
+    font-size: var(--font-size-lg);
+}
+
+
+/* ========================================
+   CASE STUDY HERO MEDIA
+   ======================================== */
+
+.case-study-hero__media {
+    width: 100%;
+    margin-block-start: var(--space-12);
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--color-dark-surface);
+}
+
+.case-study-hero__media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ========================================
+   CASE STUDY META
+   ======================================== */
+
+.case-study-meta {
+    border-block:
+        var(--border-width-sm)
+        solid
+        var(--border-color-subtle);
+
+    background-color: var(--color-surface);
+}
+
+.case-study-meta__list {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-6);
+
+    margin: 0;
+}
+
+.case-study-meta__item {
+    min-width: 0;
+}
+
+.case-study-meta__item dt {
+    margin-block-end: var(--space-2);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+
+    color: var(--color-accent);
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.case-study-meta__item dd {
+    margin: 0;
+
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   CASE STUDY CONTENT SECTIONS
+   ======================================== */
+
+.case-study-section__grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: var(--space-8);
+}
+
+.case-study-section__intro {
+    max-width: 700px;
+}
+
+.case-study-section__intro h2 {
+    margin: 0;
+}
+
+.case-study-section__content {
+    max-width: 65ch;
+}
+
+.case-study-section__content p + p {
+    margin-block-start: var(--space-4);
+}
+
+
+/* ========================================
+   CASE STUDY SOLUTION LIST
+   ======================================== */
+
+.case-study-solution__list {
+    display: grid;
+
+    gap: var(--space-3);
+
+    margin-block-start: var(--space-6);
+    padding: 0;
+
+    list-style: none;
+}
+
+.case-study-solution__list li {
+    padding-block: var(--space-3);
+
+    border-block-end:
+        var(--border-width-sm)
+        solid
+        var(--border-color-subtle);
+
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* ========================================
+   CASE STUDY STACK
+   ======================================== */
+
+.case-study-stack {
+    background-color: var(--color-surface);
+}
+
+.case-study-stack__list {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-3);
+
+    margin-block-start: var(--space-8);
+    padding: 0;
+
+    list-style: none;
+}
+
+.case-study-stack__list li {
+    display: flex;
+    align-items: center;
+
+    min-height: 56px;
+    padding-inline: var(--space-5);
+
+    border:
+        var(--border-width-sm)
+        solid
+        var(--border-color-subtle);
+
+    border-radius: var(--radius-sm);
+
+    background-color: var(--color-background);
+
+    color: var(--color-text-primary);
+
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* ========================================
+   CASE STUDY GALLERY
+   ======================================== */
+
+.case-study-gallery__intro {
+    max-width: 700px;
+    margin-block-end: var(--space-10);
+}
+
+.case-study-gallery__intro h2 {
+    margin: 0;
+}
+
+.case-study-gallery__grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-8);
+}
+
+.case-study-gallery__item {
+    margin: 0;
+}
+
+.case-study-gallery__media {
+    aspect-ratio: 16 / 10;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--color-dark-surface);
+}
+
+.case-study-gallery__media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.case-study-gallery__item figcaption {
+    margin-block-start: var(--space-3);
+
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   CASE STUDY CTA
+   ======================================== */
+
+.case-study-cta {
+    background-color: var(--color-dark);
+}
+
+.case-study-cta__container {
+    display: flex;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.case-study-cta__content {
+    width: 100%;
+    max-width: 720px;
+}
+
+.case-study-cta__content h2 {
+    margin: 0;
+
+    color: var(--color-background);
+}
+
+.case-study-cta__content > p:not(.case-study__eyebrow) {
+    max-width: 55ch;
+
+    margin-block-start: var(--space-5);
+    margin-inline: auto;
+
+    color: var(--color-background);
+}
+
+.case-study-cta .button {
+    margin-block-start: var(--space-6);
+}
+
+
+/* ========================================
+   RESPONSIVE — SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 479px) {
+
+    .case-study-hero {
+        padding-block-start: var(--space-16);
+    }
+
+    .case-study-hero__title {
+        max-width: none;
+
+        font-size: var(--font-size-5xl);
+    }
+
+    .case-study-hero__description {
+        font-size: var(--font-size-md);
+    }
+
+    .case-study-section__grid {
+        gap: var(--space-6);
+    }
+
+    .case-study-gallery__grid {
+        gap: var(--space-6);
+    }
+
+    .case-study-cta__content h2 {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE — TABLET
+   ======================================== */
+
+@media (min-width: 768px) {
+
+    .case-study-hero {
+        padding-block-start: var(--space-24);
+    }
+
+    .case-study-meta__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-8);
+    }
+
+    .case-study-section__grid {
+        grid-template-columns:
+            minmax(220px, 0.7fr)
+            minmax(0, 1.3fr);
+
+        gap: var(--space-12);
+    }
+
+    .case-study-stack__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .case-study-gallery__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE — DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+
+    .case-study-hero__title {
+        font-size: var(--font-size-7xl);
+    }
+
+    .case-study-hero__media {
+        margin-block-start: var(--space-16);
+    }
+
+    .case-study-meta__list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .case-study-gallery__grid {
+        gap: var(--space-10);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE — LARGE DESKTOP
+   ======================================== */
+
+@media (min-width: 1280px) {
+
+    .case-study-gallery__grid {
+        gap: var(--space-12);
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .case-study-hero__media,
+    .case-study-gallery__media {
+        transition: none;
+    }
+}

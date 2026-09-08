@@ -1,0 +1,83 @@
+/* ========================================
+   BASE
+   ======================================== */
+:root {
+    color-scheme: light;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+}
+
+/* Headings base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--font-size-6xl); }
+h2 { font-size: var(--font-size-5xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl);  }
+h6 { font-size: var(--font-size-lg);  }
+
+/* ========================================
+   EDITORIAL TYPOGRAPHY
+   ======================================== */
+
+.heading--editorial {
+    font-family: var(--font-editorial);
+    font-weight: var(--font-weight-editorial);
+    line-height: var(--line-height-editorial);
+}
+
+/* Texto de cuerpo */
+p {
+    line-height: var(--line-height-body);
+    color: var(--color-text-secondary);
+}
+
+/* Form elementos base */
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-primary);
+}
+
+/* Interacción táctil */
+button,
+a,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Estado de foco accesible */
+:focus-visible {
+    outline: var(--border-width-md) solid var(--color-accent);
+    outline-offset: var(--space-1);
+}
+
+/* Selección de texto personalizada */
+::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+}

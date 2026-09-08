@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <!--configuracion basica-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- informacion del sitio -->
+
+        <title>Jonathan Bonilla | Desarrollo Web Profesional</title>
+        <meta name="description" content="Desarrollo web profesional para negocios, emprendedores y marcas. sitios web estratégicos, personalizados y orientados a conversión">
+        <meta name="author" content="Jonathan Bonilla">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#111111">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="">
+        <link rel="icon" type="image/png" sizes="96x96" href="">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="apple-touch-icon" sizes="180x180" href="">
+
+        <!-- Open Graph / Redes Sociales (Facebook, WhatsApp, LinkedIn) -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta property="og:description" content="Desarrollo web profesional para negocios, emprendedores y marcas.">
+        <!-- Cambiar por el dominio definitivo al publicar-->
+        <meta property="og:image" content="">
+        <meta property="og:locale" content="es_MX">
+
+        <!--
+    <meta property="og:url" content="https://danielrojasfotografia.com">
+    -->
+    <!-- TWITTER CARD-->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta name="twitter:description" content="Desarrollo web profesional para negocios, emprendedores y marcas.">
+        <meta name="twitter:image" content="">
+
+        <!-- GOOGLE FONTS -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Base-->
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/base.css">
+        
+        <link rel="stylesheet" href="css/layout/container.css">
+        <link rel="stylesheet" href="css/layout/header.css">
+        <link rel="stylesheet" href="css/layout/navigation.css">
+        <link rel="stylesheet" href="css/layout/footer.css">
+        <link rel="stylesheet" href="css/layout/sections.css">
+
+        <!-- 2. COMPONENTES REUTILIZABLES -->
+
+        <link rel="stylesheet" href="css/components/buttons.css">
+        <link rel="stylesheet" href="css/components/accessibility.css">
+
+
+        <link rel="stylesheet" href="css/components/hero.css">
+        <link rel="stylesheet" href="css/components/problem.css">
+        <link rel="stylesheet" href="css/components/solution.css">
+        <link rel="stylesheet" href="css/components/projects.css">
+        <link rel="stylesheet" href="css/components/services.css">
+        <link rel="stylesheet" href="css/components/differentiators.css">
+        <link rel="stylesheet" href="css/components/process.css">
+        <link rel="stylesheet" href="css/components/final-cta.css">
+
+        <!-- DISEÑOS ADAPTATIVOS-->
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!--JAVASCRIPT-->
+
+        <script src="js/navigation.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <!-- Skip Link (Accesibilidad) -->   
+        <a href="#main-content" class="skip-link">
+                Saltar al contenido principal
+        </a>
+
+        <!--  HEADER-->
+
+        <header class="site-header">
+            <div class="container site-header__inner">
+                <a class="site-header__brand" href="/" aria-label="Jonathan Bonilla — Inicio">
+                    Jonathan Bonilla
+                </a>
+                <button
+                    class="site-header__menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-navigation"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <span class="site-header__menu-label">
+                        Menú
+                    </span>
+                </button>
+
+                <nav
+                    class="site-navigation"
+                    id="site-navigation"
+                    aria-label="Navegación principal"
+                >
+                    <ul class="site-navigation__list">
+
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="/pages/about.html"
+                            >
+                                Sobre mí
+                            </a>
+                        </li>
+
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="/pages/services.html"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="/pages/projects.html"
+                            >
+                                Proyectos
+                            </a>
+                        </li>
+
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="/pages/process.html"
+                            >
+                                Proceso
+                            </a>
+                        </li>
+
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="/pages/contact.html"
+                                
+                            >
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <a
+                    class="button button--primary site-header__cta"
+                    href="/pages/contact.html"
+                >
+                    Contactar
+                </a>
+
+            </div>
+        </header>
+
+        <!-- MAIN-->
+
+        <main id="main-content" tabindex="-1">
+            <!-- HERO -->
+            <section class="hero" aria-labelledby="hero-title">
+
+                <div class="container hero__container">
+
+                    <div class="hero__content">
+
+                        <p class="hero__eyebrow">
+                            Desarrollo web profesional
+                        </p>
+
+                        <h1 class="hero__title" id="hero-title">
+                            Diseño sitios web que convierten
+                            presencia digital en oportunidades.
+                        </h1>
+
+                        <p class="hero__description">
+                            Diseño y desarrollo sitios web claros, estratégicos
+                            y personalizados para emprendedores, profesionales
+                            y negocios que quieren fortalecer su presencia digital
+                            y conseguir más clientes.
+                        </p>
+
+                        <div class="hero__actions">
+
+                            <a
+                                class="button button--primary"
+                                href="/pages/contact.html"
+                            >
+                                Contactar
+                            </a>
+
+                            <a
+                                class="hero__secondary-link"
+                                href="/pages/projects.html"
+                            >
+                                Ver proyectos
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                        <p class="hero__meta">
+                            Diseño web · Desarrollo · UX
+                        </p>
+
+                    </div>
+
+                    <div class="hero__visual" aria-hidden="true">
+                        <!-- Recurso visual pendiente -->
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROBLEMA -->
+
+            <section class="problem" aria-labelledby="problem-title">
+
+                <div class="container problem__container">
+
+                    <div class="problem__intro">
+
+                        <p class="problem__eyebrow">
+                            El problema
+                        </p>
+
+                        <h2 class="problem__title" id="problem-title">
+                            Tener presencia digital no es suficiente.
+                        </h2>
+
+                        <p class="problem__description">
+                            Tu sitio web debe comunicar con claridad,
+                            transmitir confianza y ayudar a que las personas
+                            den el siguiente paso.
+                        </p>
+
+                    </div>
+
+                    <div class="problem__items">
+
+                        <article class="problem__item">
+
+                            <h3 class="problem__item-title">
+                                Una imagen poco profesional
+                            </h3>
+
+                            <p class="problem__item-description">
+                                Una presencia digital desactualizada puede
+                                hacer que un negocio no refleje la calidad
+                                de sus productos o servicios.
+                            </p>
+
+                        </article>
+
+                        <article class="problem__item">
+
+                            <h3 class="problem__item-title">
+                                Información difícil de encontrar
+                            </h3>
+
+                            <p class="problem__item-description">
+                                Cuando la información no está organizada,
+                                el visitante puede abandonar el sitio antes
+                                de encontrar lo que necesita.
+                            </p>
+
+                        </article>
+
+                        <article class="problem__item">
+
+                            <h3 class="problem__item-title">
+                                Pocas oportunidades de contacto
+                            </h3>
+
+                            <p class="problem__item-description">
+                                Un sitio sin una estrategia clara puede
+                                recibir visitas sin convertirlas en
+                                conversaciones con potenciales clientes.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+                    <!-- SOLUCIÓN -->
+
+            <section class="solution" aria-labelledby="solution-title">
+
+                <div class="container solution__container">
+
+                    <div class="solution__intro">
+
+                        <p class="solution__eyebrow">
+                            La solución
+                        </p>
+
+                        <h2 class="solution__title" id="solution-title">
+                            Desarrollo sitios web pensados para cada etapa de tu negocio.
+                        </h2>
+
+                        <p class="solution__description">
+                            Desde una landing enfocada en presencia y conversión
+                            hasta sitios profesionales y soluciones web adaptadas
+                            a necesidades específicas.
+                        </p>
+
+                    </div>
+
+                    <div class="solution__items">
+
+                        <article class="solution__item">
+
+                            <p class="solution__item-label">
+                                Landing
+                            </p>
+
+                            <h3 class="solution__item-title">
+                                Presencia y conversión
+                            </h3>
+
+                            <p class="solution__item-description">
+                                Una página estratégica para presentar tu negocio,
+                                comunicar tu propuesta y facilitar que tus clientes
+                                den el siguiente paso.
+                            </p>
+
+                        </article>
+
+                        <article class="solution__item">
+
+                            <p class="solution__item-label">
+                                Web profesional
+                            </p>
+
+                            <h3 class="solution__item-title">
+                                Una presencia digital completa
+                            </h3>
+
+                            <p class="solution__item-description">
+                                Una arquitectura web pensada para negocios que
+                                necesitan organizar diferentes contenidos, servicios
+                                y proyectos dentro de un sitio profesional.
+                            </p>
+
+                        </article>
+
+                        <article class="solution__item">
+
+                            <p class="solution__item-label">
+                                Web a medida
+                            </p>
+
+                            <h3 class="solution__item-title">
+                                Una solución adaptada a tu negocio
+                            </h3>
+
+                            <p class="solution__item-description">
+                                Proyectos que requieren una solución más específica,
+                                integraciones o funcionalidades desarrolladas según
+                                las necesidades del negocio.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROYECTOS -->
+
+            <section class="projects" aria-labelledby="projects-title">
+
+                <div class="container projects__container">
+
+                    <div class="projects__intro">
+
+                        <p class="projects__eyebrow">
+                            Proyectos
+                        </p>
+
+                        <h2 class="projects__title" id="projects-title">
+                            Proyectos seleccionados que muestran cómo trabajo.
+                        </h2>
+
+                        <p class="projects__description">
+                            Una selección de proyectos diseñados para resolver
+                            diferentes necesidades de presencia digital, experiencia
+                            y conversión.
+                        </p>
+
+                    </div>
+
+
+                    <div class="projects__list">
+
+                        <!-- PROYECTO 01 -->
+
+                        <article class="project-card">
+
+                            <div class="project-card__media">
+                                <!-- Imagen / mockup del proyecto -->
+                            </div>
+
+                            <div class="project-card__content">
+
+                                <p class="project-card__category">
+                                    Landing Profesional
+                                </p>
+
+                                <h3 class="project-card__title">
+                                    Portafolio Photographer
+                                </h3>
+
+                                <p class="project-card__description">
+                                    Portafolio web profesional diseñado para presentar
+                                    el trabajo de un fotógrafo, reforzar su marca personal
+                                    y facilitar el contacto con potenciales clientes.
+                                </p>
+
+                                <a
+                                    class="project-card__link"
+                                    href="#"
+                                    aria-label="Ver caso de estudio de Portafolio Photographer"
+                                >
+                                    Ver caso de estudio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PROYECTO 02 -->
+
+                        <article class="project-card">
+
+                            <div class="project-card__media">
+                                <!-- Imagen / mockup del proyecto -->
+                            </div>
+
+                            <div class="project-card__content">
+
+                                <p class="project-card__category">
+                                    Landing Esencial
+                                </p>
+
+                                <h3 class="project-card__title">
+                                    Barbería Local
+                                </h3>
+
+                                <p class="project-card__description">
+                                    Landing page enfocada en presentar una barbería
+                                    de forma clara, profesional y accesible, facilitando
+                                    que nuevos clientes conozcan sus servicios.
+                                </p>
+
+                                <a
+                                    class="project-card__link"
+                                    href="#"
+                                    aria-label="Ver caso de estudio de Barbería Local"
+                                >
+                                    Ver caso de estudio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PROYECTO 03 -->
+
+                        <article class="project-card">
+
+                            <div class="project-card__media">
+                                <!-- Imagen / mockup del proyecto -->
+                            </div>
+
+                            <div class="project-card__content">
+
+                                <p class="project-card__category">
+                                    Landing Premium
+                                </p>
+
+                                <h3 class="project-card__title">
+                                    Hotel Boutique
+                                </h3>
+
+                                <p class="project-card__description">
+                                    Experiencia web enfocada en comunicar la identidad
+                                    de un hotel boutique mediante una presentación visual
+                                    cuidada y una experiencia orientada a conversión.
+                                </p>
+
+                                <a
+                                    class="project-card__link"
+                                    href="#"
+                                    aria-label="Ver caso de estudio de Hotel Boutique"
+                                >
+                                    Ver caso de estudio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="projects__action">
+
+                        <a
+                            class="button button--secondary"
+                            href="/pages/projects.html"
+                        >
+                            Ver todos los proyectos
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SERVICIOS -->
+
+            <section class="services" aria-labelledby="services-title">
+
+                <div class="container services__container">
+
+                    <div class="services__intro">
+
+                        <p class="services__eyebrow">
+                            Servicios
+                        </p>
+
+                        <h2 class="services__title" id="services-title">
+                            Soluciones web diseñadas para diferentes necesidades.
+                        </h2>
+
+                        <p class="services__description">
+                            Elige el nivel de solución que mejor se adapta a tu negocio,
+                            desde una landing clara y profesional hasta experiencias web
+                            más completas y personalizadas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="services__list">
+
+                        <!-- SERVICIO 01 -->
+
+                        <article class="service-card">
+
+                            <div class="service-card__content">
+
+                                <p class="service-card__number">
+                                    01
+                                </p>
+
+                                <p class="service-card__category">
+                                    Landing Esencial
+                                </p>
+
+                                <h3 class="service-card__title">
+                                    Una presencia web clara para comenzar.
+                                </h3>
+
+                                <p class="service-card__description">
+                                    Una landing clara y profesional para negocios que
+                                    necesitan presentar su oferta y facilitar el contacto
+                                    con nuevos clientes.
+                                </p>
+
+                                <a
+                                    class="service-card__link"
+                                    href="pages/services.html#landing-esencial"
+                                    aria-label="Conocer el servicio Landing Esencial"
+                                >
+                                    Conocer servicio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SERVICIO 02 -->
+
+                        <article class="service-card">
+
+                            <div class="service-card__content">
+
+                                <p class="service-card__number">
+                                    02
+                                </p>
+
+                                <p class="service-card__category">
+                                    Landing Profesional
+                                </p>
+
+                                <h3 class="service-card__title">
+                                    Una experiencia pensada para comunicar y convertir.
+                                </h3>
+
+                                <p class="service-card__description">
+                                    Una landing estratégica diseñada para comunicar mejor
+                                    tu propuesta, presentar tus servicios y convertir
+                                    visitas en oportunidades de contacto.
+                                </p>
+
+                                <a
+                                    class="service-card__link"
+                                    href="/pages/servicios.html#landing-profesional"
+                                    aria-label="Conocer el servicio Landing Profesional"
+                                >
+                                    Conocer servicio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SERVICIO 03 -->
+
+                        <article class="service-card">
+
+                            <div class="service-card__content">
+
+                                <p class="service-card__number">
+                                    03
+                                </p>
+
+                                <p class="service-card__category">
+                                    Landing Premium
+                                </p>
+
+                                <h3 class="service-card__title">
+                                    Una presencia digital más sofisticada.
+                                </h3>
+
+                                <p class="service-card__description">
+                                    Una experiencia web más sofisticada para marcas que
+                                    necesitan destacar visualmente, reforzar su
+                                    posicionamiento y ofrecer una experiencia digital
+                                    diferenciada.
+                                </p>
+
+                                <a
+                                    class="service-card__link"
+                                    href="/pages/servicios.html#landing-premium"
+                                    aria-label="Conocer el servicio Landing Premium"
+                                >
+                                    Conocer servicio
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="services__action">
+
+                        <a
+                            class="button button--secondary"
+                            href="/pages/services.html"
+                        >
+                            Ver todos los servicios
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- DIFERENCIADORES -->
+
+            <section class="differentiators" aria-labelledby="differentiators-title">
+
+                <div class="container differentiators__container">
+
+                    <div class="differentiators__intro">
+
+                        <p class="differentiators__eyebrow">
+                            Diferenciadores
+                        </p>
+
+                        <h2 class="differentiators__title" id="differentiators-title">
+                            Una web pensada para hacer más que verse bien.
+                        </h2>
+
+                        <p class="differentiators__description">
+                            Combino estrategia, diseño y desarrollo para crear experiencias
+                            digitales claras, funcionales y orientadas a generar oportunidades
+                            para tu negocio.
+                        </p>
+
+                    </div>
+
+
+                    <div class="differentiators__list">
+
+                        <!-- DIFERENCIADOR 01 -->
+
+                        <article class="differentiator-card">
+
+                            <div class="differentiator-card__content">
+
+                                <p class="differentiator-card__number">
+                                    01
+                                </p>
+
+                                <h3 class="differentiator-card__title">
+                                    Diseño con intención
+                                </h3>
+
+                                <p class="differentiator-card__description">
+                                    Cada decisión visual tiene un propósito: comunicar mejor
+                                    tu propuesta, reforzar tu marca y facilitar la navegación.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- DIFERENCIADOR 02 -->
+
+                        <article class="differentiator-card">
+
+                            <div class="differentiator-card__content">
+
+                                <p class="differentiator-card__number">
+                                    02
+                                </p>
+
+                                <h3 class="differentiator-card__title">
+                                    Experiencia centrada en el usuario
+                                </h3>
+
+                                <p class="differentiator-card__description">
+                                    La estructura y navegación se diseñan para que tus visitantes
+                                    encuentren lo que necesitan de forma clara y natural.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- DIFERENCIADOR 03 -->
+
+                        <article class="differentiator-card">
+
+                            <div class="differentiator-card__content">
+
+                                <p class="differentiator-card__number">
+                                    03
+                                </p>
+
+                                <h3 class="differentiator-card__title">
+                                    Desarrollo cuidado
+                                </h3>
+
+                                <p class="differentiator-card__description">
+                                    Construyo sitios responsive, accesibles y mantenibles,
+                                    cuidando tanto la experiencia visible como la calidad
+                                    de su implementación.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- DIFERENCIADOR 04 -->
+
+                        <article class="differentiator-card">
+
+                            <div class="differentiator-card__content">
+
+                                <p class="differentiator-card__number">
+                                    04
+                                </p>
+
+                                <h3 class="differentiator-card__title">
+                                    Enfoque en conversión
+                                </h3>
+
+                                <p class="differentiator-card__description">
+                                    La arquitectura de la página guía al visitante desde
+                                    el primer contacto hasta una acción clara: conocer,
+                                    confiar y contactar.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROCESO -->
+
+            <section class="process" aria-labelledby="process-title">
+
+                <div class="container process__container">
+
+                    <div class="process__intro">
+
+                        <p class="process__eyebrow">
+                            Proceso
+                        </p>
+
+                        <h2 class="process__title" id="process-title">
+                            Un proceso claro de principio a fin.
+                        </h2>
+
+                        <p class="process__description">
+                            Te acompaño desde la primera conversación hasta la publicación
+                            de tu sitio, con una metodología clara en cada etapa.
+                        </p>
+
+                    </div>
+
+
+                    <ol class="process__list">
+
+                        <!-- PASO 01 -->
+
+                        <li class="process-step">
+
+                            <p class="process-step__number" aria-hidden="true">
+                                01
+                            </p>
+
+                            <div class="process-step__content">
+
+                                <h3 class="process-step__title">
+                                    Descubrimos
+                                </h3>
+
+                                <p class="process-step__description">
+                                    Entendemos tu negocio, objetivos y necesidades para
+                                    definir qué debe conseguir tu sitio web.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+
+                        <!-- PASO 02 -->
+
+                        <li class="process-step">
+
+                            <p class="process-step__number" aria-hidden="true">
+                                02
+                            </p>
+
+                            <div class="process-step__content">
+
+                                <h3 class="process-step__title">
+                                    Planificamos
+                                </h3>
+
+                                <p class="process-step__description">
+                                    Definimos la estructura, contenido y funcionalidades
+                                    necesarias antes de comenzar el desarrollo.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+
+                        <!-- PASO 03 -->
+
+                        <li class="process-step">
+
+                            <p class="process-step__number" aria-hidden="true">
+                                03
+                            </p>
+
+                            <div class="process-step__content">
+
+                                <h3 class="process-step__title">
+                                    Diseñamos
+                                </h3>
+
+                                <p class="process-step__description">
+                                    Construimos una experiencia visual coherente con tu
+                                    marca y pensada para facilitar la navegación.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+
+                        <!-- PASO 04 -->
+
+                        <li class="process-step">
+
+                            <p class="process-step__number" aria-hidden="true">
+                                04
+                            </p>
+
+                            <div class="process-step__content">
+
+                                <h3 class="process-step__title">
+                                    Desarrollamos
+                                </h3>
+
+                                <p class="process-step__description">
+                                    Convertimos el diseño en un sitio responsive,
+                                    accesible y funcional.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+
+                        <!-- PASO 05 -->
+
+                        <li class="process-step">
+
+                            <p class="process-step__number" aria-hidden="true">
+                                05
+                            </p>
+
+                            <div class="process-step__content">
+
+                                <h3 class="process-step__title">
+                                    Lanzamos
+                                </h3>
+
+                                <p class="process-step__description">
+                                    Revisamos el resultado, realizamos los ajustes finales
+                                    y dejamos el sitio preparado para publicarse.
+                                </p>
+
+                            </div>
+
+                        </li>
+
+                    </ol>
+
+                </div>
+
+            </section>
+
+            <!-- CTA FINAL -->
+
+            <section class="final-cta" aria-labelledby="final-cta-title">
+
+                <div class="container final-cta__container">
+
+                    <div class="final-cta__content">
+
+                        <p class="final-cta__eyebrow">
+                            ¿Hablamos?
+                        </p>
+
+                        <h2 class="final-cta__title" id="final-cta-title">
+                            Hagamos realidad tu próximo proyecto.
+                        </h2>
+
+                        <p class="final-cta__description">
+                            Cuéntame qué necesitas y encontremos juntos la mejor forma
+                            de convertir tu idea en una experiencia web profesional.
+                        </p>
+
+                        <a
+                            class="button button--primary final-cta__button"
+                            href="/pages/contact.html"
+                        >
+                            Hablemos de tu proyecto
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+        </main>
+
+
+        <!-- FOOTER-->
+
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+
+                <div class="site-footer__brand">
+                    <a
+                        class="site-footer__brand-link"
+                        href="/"
+                        aria-label="Jonathan Bonilla — Inicio"
+                    >
+                        Jonathan Bonilla
+                    </a>
+
+                    <p class="site-footer__description">
+                        Desarrollo web profesional para negocios y marcas.
+                    </p>        
+                </div>
+
+                <nav
+                    class="site-footer__navigation"
+                    aria-label="Navegación del pie de página"
+                >
+                    <ul class="site-footer__navigation-list">
+
+                        <li class="site-footer__navigation-item">
+                            <a
+                                class="site-footer__navigation-link"
+                                href="/pages/about.html"
+                            >
+                                Sobre mí
+                            </a>
+                        </li>
+
+                        <li class="site-footer__navigation-item">
+                            <a
+                                class="site-footer__navigation-link"
+                                href="/pages/services.html"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="site-footer__navigation-item">
+                            <a
+                                class="site-footer__navigation-link"
+                                href="/pages/projects.html"
+                            >
+                                Proyectos
+                            </a>
+                        </li>
+
+                        <li class="site-footer__navigation-item">
+                            <a
+                                class="site-footer__navigation-link"
+                                href="/pages/process.html"
+                            >
+                                Proceso
+                            </a>
+                        </li>
+
+                        <li class="site-footer__navigation-item">
+                            <a
+                                class="site-footer__navigation-link"
+                                href="/pages/contact.html"
+                            >
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+
+                <div class="site-footer__meta">
+                    <p class="site-footer__copyright">
+                    © 2026 Jonathan Bonilla
+                    </p>
+                </div>
+
+            </div>
+        </footer>
+
+    </body>
+
+</html>
+
+

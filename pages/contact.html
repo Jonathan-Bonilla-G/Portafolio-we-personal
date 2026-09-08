@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head> 
+            <!--configuracion basica-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- informacion del sitio -->
+
+        <title>Jonathan Bonilla | Desarrollo Web Profesional</title>
+        <meta name="description" content="Desarrollo web profesional para negocios, emprendedores y marcas. sitios web estratégicos, personalizados y orientados a conversión">        <meta name="author" content="Jonathan Bonilla">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#111111">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="">
+        <link rel="icon" type="image/png" sizes="96x96" href="">
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="apple-touch-icon" sizes="180x180" href="">
+
+        <!-- Open Graph / Redes Sociales (Facebook, WhatsApp, LinkedIn) -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta property="og:description" content="Desarrollo web profesional para negocios, emprendedores y marcas.">
+        <!-- Cambiar por el dominio definitivo al publicar-->
+        <meta property="og:image" content="">
+        <meta property="og:locale" content="es_MX">
+
+            <!--
+        <meta property="og:url" content="https://danielrojasfotografia.com">
+        -->
+        <!-- TWITTER CARD-->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta name="twitter:description" content="Desarrollo web profesional para negocios, emprendedores y marcas.">
+        <meta name="twitter:image" content="">
+
+            <!-- GOOGLE FONTS -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- ========================================
+            CSS BASE
+            ======================================== -->
+
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/base.css">
+
+        <!-- ========================================
+            LAYOUT
+            ======================================== -->
+
+        <link rel="stylesheet" href="../css/layout/container.css">
+        <link rel="stylesheet" href="../css/layout/header.css">
+        <link rel="stylesheet" href="../css/layout/navigation.css" >
+        <link rel="stylesheet" href="../css/layout/footer.css">
+        <link rel="stylesheet" href="../css/layout/sections.css">
+
+        <!-- ========================================
+            COMPONENTES
+            ======================================== -->
+
+        <link rel="stylesheet" href="../css/components/buttons.css">
+        <link rel="stylesheet" href="../css/components/accessibility.css">
+
+        <!-- ========================================
+            PROYECTOS
+            ======================================== -->
+
+        <link rel="stylesheet" href="../css/pages/contact.css">
+
+        <!-- ========================================
+            RESPONSIVE
+            ======================================== -->
+
+        <link rel="stylesheet" href="../css/responsive.css">
+
+        <!-- ========================================
+            JAVASCRIPT
+            ======================================== -->
+
+        <script src="../js/navigation.js" defer></script>
+        <script src="../js/contact.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ========================================
+            SKIP LINK
+            ======================================== -->
+
+        <a href="#main-content" class="skip-link">
+            Saltar al contenido principal
+        </a>
+
+        <!-- ========================================
+            HEADER
+            ======================================== -->
+
+        <header class="site-header">
+            <div class="container site-header__inner">
+                <a class="site-header__brand" href="../index.html" aria-label="Jonathan Bonilla — Inicio">
+                    Jonathan Bonilla
+                </a>
+                <button
+                    class="site-header__menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-navigation"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <span class="site-header__menu-label">
+                        Menú
+                    </span>
+                </button>
+
+                <nav
+                    class="site-navigation"
+                    id="site-navigation"
+                    aria-label="Navegación principal"
+                >
+
+                    <ul class="site-navigation__list">
+
+                        <li class="site-navigation__item">
+
+                            <a
+                                class="site-navigation__link"
+                                href="about.html"
+                            >
+                                Sobre mí
+                            </a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a
+                                class="site-navigation__link"
+                                href="services.html"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+                        <li class="site-navigation__item">
+
+                            <a
+                                class="site-navigation__link"
+                                href="projects.html"
+                                aria-current="page"
+                            >
+                                Proyectos
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-navigation__item">
+
+                            <a
+                                class="site-navigation__link"
+                                href="proceso.html"
+                            >
+                                Proceso
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-navigation__item">
+
+                            <a
+                                class="site-navigation__link"
+                                href="contacto.html"
+                            >
+                                Contacto
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <a
+                    class="button button--primary site-header__cta"
+                    href="contacto.html"
+                >
+                    Contactar
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+            MAIN
+        =============================== -->
+
+        <main id="main-content">
+
+            <!-- ==============================
+                CONTACTO
+            =============================== -->
+
+            <section
+                class="section contact"
+                aria-labelledby="contact-title"
+            >
+
+                <div class="container contact__container">
+
+                    <!-- INTRODUCCIÓN -->
+
+                    <div class="contact__intro">
+
+                        <p class="contact__eyebrow">
+                            Contacto
+                        </p>
+
+                        <h1
+                            id="contact-title"
+                            class="contact__title"
+                        >
+                            Hablemos de tu proyecto
+                        </h1>
+
+                        <p class="contact__description">
+                            Cuéntame qué tienes en mente y conozcamos mejor
+                            lo que necesitas para tu proyecto web.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ==============================
+                        CONTENIDO DE CONTACTO
+                    =============================== -->
+
+                    <div class="contact__content">
+
+
+                        <!-- ==============================
+                            FORMULARIO
+                        =============================== -->
+
+<div class="contact__form-wrapper">
+
+    <h2>
+        Cuéntame sobre tu proyecto
+    </h2>
+
+    <p class="contact__form-description">
+        Comparte algunos detalles y te responderé para conocer
+        mejor lo que necesitas.
+    </p>
+
+
+    <form
+        class="contact-form"
+        action="#"
+        method="post"
+        novalidate
+    >
+
+        <!-- ==========================
+             NOMBRE
+             ========================== -->
+
+        <div class="contact-form__field">
+
+            <label for="contact-name">
+                Nombre
+            </label>
+
+            <input
+                id="contact-name"
+                class="contact-form__input"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                aria-describedby="contact-name-error"
+            >
+
+            <p
+                id="contact-name-error"
+                class="contact-form__error"
+                role="alert"
+                hidden
+            >
+                Introduce tu nombre.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================
+             EMAIL
+             ========================== -->
+
+        <div class="contact-form__field">
+
+            <label for="contact-email">
+                Email
+            </label>
+
+            <input
+                id="contact-email"
+                class="contact-form__input"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                aria-describedby="contact-email-error"
+            >
+
+            <p
+                id="contact-email-error"
+                class="contact-form__error"
+                role="alert"
+                hidden
+            >
+                Introduce un email válido.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================
+             TIPO DE PROYECTO
+             ========================== -->
+
+        <div class="contact-form__field">
+
+            <label for="contact-project-type">
+                Tipo de proyecto
+            </label>
+
+            <select
+                id="contact-project-type"
+                class="contact-form__select"
+                name="project-type"
+                required
+                aria-describedby="contact-project-type-error"
+            >
+
+                <option
+                    value=""
+                    selected
+                    disabled
+                >
+                    Selecciona una opción
+                </option>
+
+                <option value="landing-esencial">
+                    Landing Esencial
+                </option>
+
+                <option value="landing-profesional">
+                    Landing Profesional
+                </option>
+
+                <option value="landing-premium">
+                    Landing Premium
+                </option>
+
+                <option value="web-profesional">
+                    Web Profesional
+                </option>
+
+                <option value="web-a-medida">
+                    Web a Medida
+                </option>
+
+                <option value="otro">
+                    Otro
+                </option>
+
+            </select>
+
+            <p
+                id="contact-project-type-error"
+                class="contact-form__error"
+                role="alert"
+                hidden
+            >
+                Selecciona el tipo de proyecto.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================
+             MENSAJE
+             ========================== -->
+
+        <div class="contact-form__field">
+
+            <label for="contact-message">
+                Cuéntame sobre tu proyecto
+            </label>
+
+            <textarea
+                id="contact-message"
+                class="contact-form__textarea"
+                name="message"
+                rows="7"
+                aria-describedby="contact-message-help contact-message-error"
+                required
+            ></textarea>
+
+            <p
+                id="contact-message-help"
+                class="contact-form__help"
+            >
+                Cuéntame qué necesitas, qué quieres conseguir
+                o qué problema quieres resolver.
+            </p>
+
+            <p
+                id="contact-message-error"
+                class="contact-form__error"
+                role="alert"
+                hidden
+            >
+                Cuéntame brevemente sobre tu proyecto.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================
+             ESTADO DEL FORMULARIO
+             ========================== -->
+
+        <div
+            class="contact-form__status"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></div>
+
+
+        <!-- ==========================
+             SUBMIT
+             ========================== -->
+
+        <button
+            class="contact-form__submit"
+            type="submit"
+        >
+            Enviar solicitud
+        </button>
+
+    </form>
+
+</div>
+
+<!-- ==============================
+     CONTACTO DIRECTO
+=============================== -->
+
+<aside
+    class="contact__direct"
+    aria-labelledby="contact-direct-title"
+>
+
+    <div class="contact__direct-header">
+
+        <p class="contact__direct-eyebrow">
+            Contacto directo
+        </p>
+
+        <h2
+            id="contact-direct-title"
+            class="contact__direct-title"
+        >
+            ¿Prefieres hablar directamente?
+        </h2>
+
+        <p class="contact__direct-description">
+            También puedes comunicarte conmigo directamente
+            a través de cualquiera de estos medios.
+        </p>
+
+    </div>
+
+
+    <!-- WHATSAPP -->
+
+    <div class="contact__direct-item">
+
+        <div class="contact__direct-item-content">
+
+            <h3 class="contact__direct-label">
+                WhatsApp
+            </h3>
+
+            <p class="contact__direct-text">
+                Hablemos directamente sobre tu proyecto.
+            </p>
+
+        </div>
+
+        <a
+            class="contact__direct-link"
+            href="#"
+            aria-label="Contactar por WhatsApp"
+        >
+            Escribir por WhatsApp
+        </a>
+
+    </div>
+
+
+    <!-- EMAIL -->
+
+    <div class="contact__direct-item">
+
+        <div class="contact__direct-item-content">
+
+            <h3 class="contact__direct-label">
+                Email
+            </h3>
+
+            <p class="contact__direct-text">
+                Envíame los detalles de tu proyecto.
+            </p>
+
+        </div>
+
+        <a
+            class="contact__direct-link"
+            href="mailto:"
+            aria-label="Enviar email"
+        >
+            Enviar un email
+        </a>
+
+    </div>
+
+
+    <!-- LINKEDIN -->
+
+    <div class="contact__direct-item">
+
+        <div class="contact__direct-item-content">
+
+            <h3 class="contact__direct-label">
+                LinkedIn
+            </h3>
+
+            <p class="contact__direct-text">
+                Conecta conmigo profesionalmente.
+            </p>
+
+        </div>
+
+        <a
+            class="contact__direct-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar perfil de LinkedIn"
+        >
+            Ver LinkedIn
+        </a>
+
+    </div>
+
+
+    <!-- GITHUB -->
+
+    <div class="contact__direct-item">
+
+        <div class="contact__direct-item-content">
+
+            <h3 class="contact__direct-label">
+                GitHub
+            </h3>
+
+            <p class="contact__direct-text">
+                Conoce mis proyectos y código.
+            </p>
+
+        </div>
+
+        <a
+            class="contact__direct-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar perfil de GitHub"
+        >
+            Ver GitHub
+        </a>
+
+    </div>
+
+</aside>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- ========================================
+            FOOTER
+            ======================================== -->
+
+        <footer class="site-footer">
+
+            <div class="container site-footer__inner">
+
+
+                <div class="site-footer__brand">
+
+                    <a
+                        class="site-footer__brand-link"
+                        href="../index.html"
+                        aria-label="Jonathan Bonilla — Inicio"
+                    >
+                        Jonathan Bonilla
+                    </a>
+
+
+                    <p class="site-footer__description">
+                        Desarrollo web profesional para negocios y marcas.
+                    </p>
+
+                </div>
+
+
+                <nav
+                    class="site-footer__navigation"
+                    aria-label="Navegación del pie de página"
+                >
+
+                    <ul class="site-footer__navigation-list">
+
+                        <li class="site-footer__navigation-item">
+
+                            <a
+                                class="site-footer__navigation-link"
+                                href="about.html"
+                            >
+                                Sobre mí
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-footer__navigation-item">
+
+                            <a
+                                class="site-footer__navigation-link"
+                                href="services.html"
+                            >
+                                Servicios
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-footer__navigation-item">
+
+                            <a
+                                class="site-footer__navigation-link"
+                                href="projects.html"
+                                aria-current="page"
+                            >
+                                Proyectos
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-footer__navigation-item">
+
+                            <a
+                                class="site-footer__navigation-link"
+                                href="proceso.html"
+                            >
+                                Proceso
+                            </a>
+
+                        </li>
+
+
+                        <li class="site-footer__navigation-item">
+
+                            <a
+                                class="site-footer__navigation-link"
+                                href="contacto.html"
+                            >
+                                Contacto
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <div class="site-footer__meta">
+
+                    <p class="site-footer__copyright">
+                        © 2026 Jonathan Bonilla
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </footer>
+
+    </body>
+</html>

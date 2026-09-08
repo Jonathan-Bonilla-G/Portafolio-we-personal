@@ -1,0 +1,64 @@
+/* ========================================
+   FINAL CTA
+   ======================================== */
+
+/* SECTION */
+
+.final-cta {
+    padding-block: var(--space-20);
+    background-color: var(--color-background); /* Fondo claro global */
+}
+
+.final-cta__container {
+    display: grid;
+    justify-items: center;
+    
+    /* Convertimos el contenedor en una tarjeta oscura */
+    background-color: var(--color-dark);
+    padding: var(--space-16) var(--space-8);
+    border-radius: var(--radius-xl); /* 24px */
+    border: var(--border-width-sm) solid var(--color-dark-surface);
+}
+
+.final-cta__content {
+    max-width: 760px;
+    text-align: center;
+}
+
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.final-cta__eyebrow {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.final-cta__title {
+    max-width: 18ch;
+    margin-inline: auto;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+    color: var(--color-surface);
+}
+
+.final-cta__description {
+    max-width: 60ch;
+    margin-top: var(--space-6);
+    margin-inline: auto;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+    color: var(--color-border);
+}
+
+.final-cta__button {
+    margin-top: var(--space-8);
+}

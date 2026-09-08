@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURACIÓN BÁSICA
+         ======================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <!-- ========================================
+         INFORMACIÓN DEL SITIO
+         ======================================== -->
+
+    <title>Proyectos | Jonathan Bonilla</title>
+
+    <meta
+        name="description"
+        content="Conoce los proyectos de diseño y desarrollo web de Jonathan Bonilla."
+    >
+
+    <meta
+        name="author"
+        content="Jonathan Bonilla"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+
+    <!-- ========================================
+         FAVICON
+         ======================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href=""
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href=""
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href=""
+    >
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href=""
+    >
+
+
+    <!-- ========================================
+         OPEN GRAPH
+         ======================================== -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Proyectos | Jonathan Bonilla"
+    >
+
+    <meta
+        property="og:description"
+        content="Conoce los proyectos de diseño y desarrollo web de Jonathan Bonilla."
+    >
+
+    <meta
+        property="og:image"
+        content=""
+    >
+
+    <meta
+        property="og:locale"
+        content="es_MX"
+    >
+
+
+    <!-- ========================================
+         TWITTER CARD
+         ======================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Proyectos | Jonathan Bonilla"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Conoce los proyectos de diseño y desarrollo web de Jonathan Bonilla."
+    >
+
+    <meta
+        name="twitter:image"
+        content=""
+    >
+
+
+    <!-- ========================================
+         GOOGLE FONTS
+         ======================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ========================================
+         CSS BASE
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+
+    <!-- ========================================
+         LAYOUT
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/container.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/navigation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/sections.css"
+    >
+
+
+    <!-- ========================================
+         COMPONENTES
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/components/buttons.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/accessibility.css"
+    >
+
+
+    <!-- ========================================
+         PROYECTOS
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/pages/projects.css"
+    >
+
+
+    <!-- ========================================
+         RESPONSIVE
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/projects.js" defer></script>
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         SKIP LINK
+         ======================================== -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Saltar al contenido principal
+    </a>
+
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+
+    <header class="site-header">
+
+        <div class="container site-header__inner">
+
+            <a
+                class="site-header__brand"
+                href="../index.html"
+                aria-label="Jonathan Bonilla — Inicio"
+            >
+                Jonathan Bonilla
+            </a>
+
+
+            <button
+                class="site-header__menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+                aria-label="Abrir menú de navegación"
+            >
+
+                <span class="site-header__menu-label">
+                    Menú
+                </span>
+
+            </button>
+
+
+            <nav
+                class="site-navigation"
+                id="site-navigation"
+                aria-label="Navegación principal"
+            >
+
+                <ul class="site-navigation__list">
+
+                    <li class="site-navigation__item">
+
+                        <a
+                            class="site-navigation__link"
+                            href="about.html"
+                        >
+                            Sobre mí
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-navigation__item">
+
+                        <a
+                            class="site-navigation__link"
+                            href="services.html"
+                        >
+                            Servicios
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-navigation__item">
+
+                        <a
+                            class="site-navigation__link"
+                            href="projects.html"
+                            aria-current="page"
+                        >
+                            Proyectos
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-navigation__item">
+
+                        <a
+                            class="site-navigation__link"
+                            href="proceso.html"
+                        >
+                            Proceso
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-navigation__item">
+
+                        <a
+                            class="site-navigation__link"
+                            href="contacto.html"
+                        >
+                            Contacto
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <a
+                class="button button--primary site-header__cta"
+                href="contacto.html"
+            >
+                Contactar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         MAIN
+         ======================================== -->
+
+    <main
+        id="main-content"
+        tabindex="-1"
+    >
+
+
+        <!-- ====================================
+             HERO
+             ==================================== -->
+
+        <section
+            class="projects-hero section"
+            aria-labelledby="projects-hero-title"
+        >
+
+            <div class="container projects-hero__container">
+
+                <div class="projects-hero__content">
+
+                    <p class="projects-hero__eyebrow">
+                        Proyectos
+                    </p>
+
+
+                    <h1
+                        class="projects-hero__title"
+                        id="projects-hero-title"
+                    >
+                        Proyectos que muestran
+                        cómo trabajo.
+                    </h1>
+
+
+                    <p class="projects-hero__description">
+                        Explora una selección de proyectos de diseño y
+                        desarrollo web creados con enfoque en claridad,
+                        experiencia de usuario y objetivos de negocio.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             FILTROS
+             ==================================== -->
+
+        <section
+            class="projects-filter section section--compact"
+            aria-labelledby="projects-filter-title"
+        >
+
+            <div class="container projects-filter__container">
+
+                <h2
+                    class="projects-filter__title"
+                    id="projects-filter-title"
+                >
+                    Explorar proyectos
+                </h2>
+
+
+                <div
+                    class="projects-filter__controls"
+                    role="group"
+                    aria-label="Filtrar proyectos"
+                >
+
+                    <button
+                        class="projects-filter__button is-active"
+                        type="button"
+                        data-filter="all"
+                        aria-pressed="true"
+                    >
+                        Todos
+                    </button>
+
+
+                    <button
+                        class="projects-filter__button"
+                        type="button"
+                        data-filter="landing"
+                        aria-pressed="false"
+                    >
+                        Landing
+                    </button>
+
+
+                    <button
+                        class="projects-filter__button"
+                        type="button"
+                        data-filter="web"
+                        aria-pressed="false"
+                    >
+                        Web
+                    </button>
+
+
+                    <button
+                        class="projects-filter__button"
+                        type="button"
+                        data-filter="custom"
+                        aria-pressed="false"
+                    >
+                        A medida
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             LISTADO DE PROYECTOS
+             ==================================== -->
+
+        <section
+            class="projects-list section"
+            aria-labelledby="projects-list-title"
+        >
+
+            <div class="container projects-list__container">
+
+                <div class="projects-list__intro">
+
+                    <p class="projects-list__eyebrow">
+                        Selección de trabajo
+                    </p>
+
+
+                    <h2
+                        class="projects-list__title"
+                        id="projects-list-title"
+                    >
+                        Trabajo seleccionado.
+                    </h2>
+
+
+                    <p class="projects-list__description">
+                        Aquí encontrarás proyectos que muestran diferentes
+                        enfoques de diseño, desarrollo y experiencia digital.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-list__grid">
+
+
+                    <!-- ====================================
+                         PROYECTO
+                         PORTAFOLIO PHOTOGRAPHER
+                         ==================================== -->
+
+                    <article
+                        class="project-card"
+                        data-category="web"
+                    >
+
+                        <div
+                            class="project-card__media"
+                            aria-hidden="true"
+                        >
+                            <!--
+                                Recurso visual pendiente.
+                                Se incorporará posteriormente.
+                            -->
+                        </div>
+
+
+                        <div class="project-card__content">
+
+                            <p class="project-card__category">
+                                Web Profesional
+                            </p>
+
+
+                            <h3 class="project-card__title">
+                                Portafolio Photographer
+                            </h3>
+
+
+                            <p class="project-card__description">
+                                Proyecto de portafolio profesional enfocado
+                                en presentar trabajo visual, comunicar una
+                                marca personal y facilitar el contacto con
+                                potenciales clientes.
+                            </p>
+
+
+                            <a
+                                class="project-card__link"
+                                href="#"
+                                aria-label="Ver caso de estudio de Portafolio Photographer"
+                            >
+                                Ver caso de estudio
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ====================================
+                         PROYECTO FUTURO
+                         ==================================== -->
+
+                    <article
+                        class="project-card"
+                        data-category="landing"
+                    >
+
+                        <div
+                            class="project-card__media"
+                            aria-hidden="true"
+                        >
+                            <!-- Recurso visual pendiente -->
+                        </div>
+
+
+                        <div class="project-card__content">
+
+                            <p class="project-card__category">
+                                Landing
+                            </p>
+
+
+                            <h3 class="project-card__title">
+                                Próximo proyecto
+                            </h3>
+
+
+                            <p class="project-card__description">
+                                Este espacio se utilizará para presentar
+                                un proyecto de landing page cuando el
+                                desarrollo correspondiente esté disponible.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ====================================
+                         PROYECTO FUTURO
+                         ==================================== -->
+
+                    <article
+                        class="project-card"
+                        data-category="custom"
+                    >
+
+                        <div
+                            class="project-card__media"
+                            aria-hidden="true"
+                        >
+                            <!-- Recurso visual pendiente -->
+                        </div>
+
+
+                        <div class="project-card__content">
+
+                            <p class="project-card__category">
+                                A medida
+                            </p>
+
+
+                            <h3 class="project-card__title">
+                                Próximo proyecto
+                            </h3>
+
+
+                            <p class="project-card__description">
+                                Este espacio se utilizará para presentar
+                                una solución web personalizada cuando
+                                el proyecto esté disponible.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             CTA
+             ==================================== -->
+
+        <section
+            class="projects-cta section section--large"
+            aria-labelledby="projects-cta-title"
+        >
+
+            <div class="container projects-cta__container">
+
+                <div class="projects-cta__content">
+
+                    <p class="projects-cta__eyebrow">
+                        Siguiente paso
+                    </p>
+
+
+                    <h2
+                        class="projects-cta__title"
+                        id="projects-cta-title"
+                    >
+                        ¿Tienes un proyecto
+                        que quieres desarrollar?
+                    </h2>
+
+
+                    <p class="projects-cta__description">
+                        Cuéntame qué necesitas y podemos hablar sobre
+                        la mejor solución para tu proyecto.
+                    </p>
+
+
+                    <a
+                        class="button button--primary"
+                        href="contacto.html"
+                    >
+                        Hablemos de tu proyecto
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container site-footer__inner">
+
+
+            <div class="site-footer__brand">
+
+                <a
+                    class="site-footer__brand-link"
+                    href="../index.html"
+                    aria-label="Jonathan Bonilla — Inicio"
+                >
+                    Jonathan Bonilla
+                </a>
+
+
+                <p class="site-footer__description">
+                    Desarrollo web profesional para negocios y marcas.
+                </p>
+
+            </div>
+
+
+            <nav
+                class="site-footer__navigation"
+                aria-label="Navegación del pie de página"
+            >
+
+                <ul class="site-footer__navigation-list">
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="about.html"
+                        >
+                            Sobre mí
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="services.html"
+                        >
+                            Servicios
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="projects.html"
+                            aria-current="page"
+                        >
+                            Proyectos
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="proceso.html"
+                        >
+                            Proceso
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="contacto.html"
+                        >
+                            Contacto
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="site-footer__meta">
+
+                <p class="site-footer__copyright">
+                    © 2026 Jonathan Bonilla
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

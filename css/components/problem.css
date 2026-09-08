@@ -1,0 +1,77 @@
+/* ========================================
+   PROBLEM
+   ======================================== */
+
+.problem {
+    padding-block: var(--space-16);
+    background-color: var(--color-surface);
+}
+
+.problem__container {
+    display: grid;
+    gap: var(--space-12);
+}
+
+.problem__intro {
+    max-width: 720px;
+}
+
+.problem__eyebrow {
+    margin-bottom: var(--space-4);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--color-accent);
+}
+
+.problem__title {
+    max-width: 18ch;
+
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+
+    color: var(--color-text-primary);
+}
+
+.problem__description {
+    max-width: 60ch;
+    margin-top: var(--space-6);
+
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text-secondary);
+}
+
+.problem__items {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.problem__item {
+    padding-top: var(--space-6);
+    border-top: var(--border-width-sm) solid var(--color-border);
+}
+
+.problem__item-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+
+    color: var(--color-text-primary);
+}
+
+.problem__item-description {
+    margin-top: var(--space-3);
+
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text-secondary);
+}

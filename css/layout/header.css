@@ -1,0 +1,129 @@
+/* ========================================
+   SITE HEADER
+   ======================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: var(--z-header);
+
+    background-color: var(--color-background);
+    border-bottom: var(--border-width-sm) solid var(--border-color-subtle);
+}
+
+
+/* ========================================
+   HEADER INNER
+   ======================================== */
+
+.site-header__inner {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-6);
+}
+
+
+/* ========================================
+   BRAND
+   ======================================== */
+
+.site-header__brand {
+    flex-shrink: 0;
+
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+}
+
+
+/* ========================================
+   HEADER CTA
+   ======================================== */
+
+.site-header__cta {
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   MOBILE MENU TOGGLE
+   ======================================== */
+
+.site-header__menu-toggle {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 44px;
+    min-height: 44px;
+
+    padding: var(--space-2);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+
+    color: var(--color-text-primary);
+}
+
+.site-header + main {
+    padding-top: 72px;
+}
+
+@media (max-width: 767px) {
+    .site-header + main {
+        padding-top: 64px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE — MOBILE
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .site-header__inner {
+        min-height: 64px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* ----------------------------------------
+       MENU TOGGLE
+       ---------------------------------------- */
+
+    .site-header__menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+
+    /* ----------------------------------------
+       HEADER CTA
+       ---------------------------------------- */
+
+    .site-header .site-header__cta {
+    display: none;
+    width: 100%;
+    margin-bottom: var(--space-4);
+    }
+
+
+    /* ----------------------------------------
+       CTA WHEN MENU IS OPEN
+       ---------------------------------------- */
+
+    .site-header.is-menu-open .site-header__cta {
+    display: inline-flex;
+}
+
+}

@@ -1,0 +1,100 @@
+/* ========================================
+   DIFFERENTIATORS
+   ======================================== */
+
+/* SECTION */
+
+.differentiators {
+    padding-block: var(--space-16);
+    background-color: var(--color-surface);
+}
+
+.differentiators__container {
+    display: grid;
+    gap: var(--space-12);
+}
+
+
+/* ========================================
+   INTRO
+   ======================================== */
+
+.differentiators__intro {
+    max-width: 720px;
+}
+
+.differentiators__eyebrow {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.differentiators__title {
+    max-width: 22ch;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+}
+
+.differentiators__description {
+    max-width: 60ch;
+    margin-top: var(--space-6);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================
+   DIFFERENTIATORS LIST
+   ======================================== */
+
+.differentiators__list {
+    display: grid;
+    gap: var(--space-8);
+}
+
+
+/* ========================================
+   DIFFERENTIATOR CARD
+   ======================================== */
+
+.differentiator-card {
+    min-height: 100%;
+    padding-block: var(--space-8);
+    border-top: var(--border-width-sm) solid var(--color-border);
+}
+
+.differentiator-card__content {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.differentiator-card__number {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+}
+
+.differentiator-card__title {
+    max-width: 24ch;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-text-primary);
+}
+
+.differentiator-card__description {
+    max-width: 48ch;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+    color: var(--color-text-secondary);
+}

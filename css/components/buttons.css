@@ -1,0 +1,129 @@
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+/* BASE */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding-inline: var(--space-6);
+
+    border: var(--border-width-sm) solid transparent;
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast) var(--ease-standard),
+        border-color var(--transition-fast) var(--ease-standard),
+        color var(--transition-fast) var(--ease-standard),
+        transform var(--transition-fast) var(--ease-standard);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   PRIMARY
+   ======================================== */
+
+.button--primary {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+}
+
+.button--primary:hover {
+    background-color: var(--color-dark);
+}
+
+.button--primary:active {
+    background-color: var(--color-dark);
+}
+
+.button--primary:focus-visible {
+    outline: var(--border-width-md) solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   SECONDARY
+   ======================================== */
+
+.button--secondary {
+    background-color: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.button--secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.button--secondary:active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-surface);
+}
+
+.button--secondary:focus-visible {
+    outline: var(--border-width-md) solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   TERTIARY
+   ======================================== */
+
+.button--tertiary {
+    padding-inline: 0;
+
+    background-color: transparent;
+    border-color: transparent;
+
+    color: var(--color-text-primary);
+
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+    transition:
+        color var(--transition-fast) var(--ease-standard),
+        text-decoration-color var(--transition-fast) var(--ease-standard);
+}
+
+.button--tertiary:hover {
+    color: var(--color-accent);
+    text-decoration-color: currentColor;
+}
+
+.button--tertiary:active {
+    color: var(--color-dark);
+}
+
+.button--tertiary:focus-visible {
+    outline: var(--border-width-md) solid var(--color-accent);
+    outline-offset: 3px;
+}

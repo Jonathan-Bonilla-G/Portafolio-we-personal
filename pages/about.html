@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURACIÓN BÁSICA
+         ======================================== -->
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- ========================================
+         INFORMACIÓN DEL SITIO
+         ======================================== -->
+
+    <title>Sobre mí | Jonathan Bonilla</title>
+
+    <meta
+        name="description"
+        content="Conoce a Jonathan Bonilla, desarrollador web enfocado en crear experiencias digitales claras, estratégicas y profesionales."
+    >
+
+    <meta
+        name="author"
+        content="Jonathan Bonilla"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <!-- ========================================
+         FAVICON
+         ======================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href=""
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href=""
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href=""
+    >
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href=""
+    >
+
+    <!-- ========================================
+         OPEN GRAPH
+         ======================================== -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Sobre mí | Jonathan Bonilla"
+    >
+
+    <meta
+        property="og:description"
+        content="Conoce mi enfoque profesional en diseño y desarrollo web."
+    >
+
+    <meta
+        property="og:image"
+        content=""
+    >
+
+    <meta
+        property="og:locale"
+        content="es_MX"
+    >
+
+    <!-- ========================================
+         TWITTER CARD
+         ======================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Sobre mí | Jonathan Bonilla"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Conoce mi enfoque profesional en diseño y desarrollo web."
+    >
+
+    <meta
+        name="twitter:image"
+        content=""
+    >
+
+    <!-- ========================================
+         GOOGLE FONTS
+         ======================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ========================================
+         CSS BASE
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <!-- ========================================
+         LAYOUT
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/container.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/navigation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/layout/sections.css"
+    >
+
+    <!-- ========================================
+         COMPONENTES
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/components/buttons.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/accessibility.css"
+    >
+
+    <!-- SOBRE MÍ -->
+
+    <link
+        rel="stylesheet"
+        href="../css/components/about.css"
+    >
+
+    <!-- ========================================
+         RESPONSIVE
+         ======================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+
+    <script
+        src="../js/navigation.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         SKIP LINK
+         ======================================== -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Saltar al contenido principal
+    </a>
+
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+
+    <header class="site-header">
+
+        <div class="container site-header__inner">
+
+            <a
+                class="site-header__brand"
+                href="../index.html"
+                aria-label="Jonathan Bonilla — Inicio"
+            >
+                Jonathan Bonilla
+            </a>
+
+            <button
+                class="site-header__menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+                aria-label="Abrir menú de navegación"
+            >
+                <span class="site-header__menu-label">
+                    Menú
+                </span>
+            </button>
+
+            <nav
+                class="site-navigation"
+                id="site-navigation"
+                aria-label="Navegación principal"
+            >
+
+                <ul class="site-navigation__list">
+
+                    <li class="site-navigation__item">
+                        <a
+                            class="site-navigation__link"
+                            href="about.html"
+                            aria-current="page"
+                        >
+                            Sobre mí
+                        </a>
+                    </li>
+
+                    <li class="site-navigation__item">
+                        <a
+                            class="site-navigation__link"
+                            href="services.html"
+                        >
+                            Servicios
+                        </a>
+                    </li>
+
+                    <li class="site-navigation__item">
+                        <a
+                            class="site-navigation__link"
+                            href="proyectos.html"
+                        >
+                            Proyectos
+                        </a>
+                    </li>
+
+                    <li class="site-navigation__item">
+                        <a
+                            class="site-navigation__link"
+                            href="proceso.html"
+                        >
+                            Proceso
+                        </a>
+                    </li>
+
+                    <li class="site-navigation__item">
+                        <a
+                            class="site-navigation__link"
+                            href="contacto.html"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <a
+                class="button button--primary site-header__cta"
+                href="contacto.html"
+            >
+                Contactar
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================
+         MAIN
+         ======================================== -->
+
+    <main
+        id="main-content"
+        tabindex="-1"
+    >
+
+
+        <!-- ====================================
+             ABOUT HERO
+             ==================================== -->
+
+        <section
+            class="about-hero section"
+            aria-labelledby="about-hero-title"
+        >
+
+            <div class="container about-hero__container">
+
+                <div class="about-hero__media">
+
+                    <!--
+                        Imagen personal pendiente.
+                        Mantener este contenedor hasta
+                        disponer de la fotografía definitiva.
+                    -->
+
+                    <div
+                        class="about-hero__image"
+                        role="img"
+                        aria-label="Fotografía profesional de Jonathan Bonilla"
+                    ></div>
+
+                </div>
+
+
+                <div class="about-hero__content">
+
+                    <p class="about-hero__eyebrow">
+                        Sobre mí
+                    </p>
+
+                    <h1
+                        class="about-hero__title"
+                        id="about-hero-title"
+                    >
+                        Desarrollo experiencias digitales
+                        con intención.
+                    </h1>
+
+                    <p class="about-hero__description">
+                        Soy Jonathan Bonilla, desarrollador web enfocado
+                        en crear sitios claros, profesionales y pensados
+                        para las necesidades reales de cada proyecto.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             PRESENTACIÓN
+             ==================================== -->
+
+        <section
+            class="about-introduction section"
+            aria-labelledby="about-introduction-title"
+        >
+
+            <div class="container about-introduction__container">
+
+                <div class="about-introduction__intro">
+
+                    <p class="about-introduction__eyebrow">
+                        Mi trabajo
+                    </p>
+
+                    <h2
+                        class="about-introduction__title"
+                        id="about-introduction-title"
+                    >
+                        Diseño y desarrollo pensando
+                        en las personas detrás de cada proyecto.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-introduction__content">
+
+                    <p>
+                        Una página web no debería existir únicamente
+                        para mostrar información. Debe ayudar a comunicar
+                        una propuesta, transmitir confianza y facilitar
+                        que las personas encuentren lo que necesitan.
+                    </p>
+
+                    <p>
+                        Por eso trabajo combinando estructura, experiencia
+                        de usuario, diseño y desarrollo para construir
+                        soluciones digitales coherentes con los objetivos
+                        de cada negocio.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             TRAYECTORIA
+             ==================================== -->
+
+        <section
+            class="about-story section"
+            aria-labelledby="about-story-title"
+        >
+
+            <div class="container about-story__container">
+
+                <div class="about-story__header">
+
+                    <p class="about-story__eyebrow">
+                        Mi trayectoria
+                    </p>
+
+                    <h2
+                        class="about-story__title"
+                        id="about-story-title"
+                    >
+                        Una evolución enfocada en crear
+                        mejores experiencias digitales.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-story__content">
+
+                    <p>
+                        Mi camino en el desarrollo web se ha construido
+                        a través del aprendizaje constante y la práctica,
+                        buscando comprender no solo cómo funciona una
+                        tecnología, sino cómo puede utilizarse para
+                        resolver un problema real.
+                    </p>
+
+                    <p>
+                        Actualmente enfoco mi trabajo en desarrollar
+                        experiencias web profesionales donde la estructura,
+                        el diseño y la implementación trabajan juntos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             ENFOQUE
+             ==================================== -->
+
+        <section
+            class="about-approach section"
+            aria-labelledby="about-approach-title"
+        >
+
+            <div class="container about-approach__container">
+
+                <div class="about-approach__intro">
+
+                    <p class="about-approach__eyebrow">
+                        Mi enfoque
+                    </p>
+
+                    <h2
+                        class="about-approach__title"
+                        id="about-approach-title"
+                    >
+                        Cada proyecto comienza
+                        con una pregunta.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-approach__content">
+
+                    <p>
+                        ¿Qué necesita conseguir este sitio web?
+                    </p>
+
+                    <p>
+                        A partir de esa pregunta se define la estructura,
+                        el contenido, la experiencia y finalmente la
+                        implementación.
+                    </p>
+
+                    <p>
+                        El objetivo es evitar soluciones genéricas y
+                        construir experiencias digitales que tengan una
+                        razón clara detrás de cada decisión.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             HABILIDADES
+             ==================================== -->
+
+        <section
+            class="about-skills section"
+            aria-labelledby="about-skills-title"
+        >
+
+            <div class="container about-skills__container">
+
+                <div class="about-skills__intro">
+
+                    <p class="about-skills__eyebrow">
+                        Habilidades
+                    </p>
+
+                    <h2
+                        class="about-skills__title"
+                        id="about-skills-title"
+                    >
+                        Capacidades que forman parte
+                        de cada proyecto.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-skills__list">
+
+                    <article class="about-skill">
+
+                        <h3 class="about-skill__title">
+                            Desarrollo web
+                        </h3>
+
+                        <p class="about-skill__description">
+                            Construcción de sitios web funcionales,
+                            responsive y mantenibles.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-skill">
+
+                        <h3 class="about-skill__title">
+                            Frontend
+                        </h3>
+
+                        <p class="about-skill__description">
+                            Desarrollo de interfaces claras y
+                            adaptadas a diferentes dispositivos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-skill">
+
+                        <h3 class="about-skill__title">
+                            UX / UI
+                        </h3>
+
+                        <p class="about-skill__description">
+                            Organización de contenido y experiencias
+                            pensadas para facilitar la navegación.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-skill">
+
+                        <h3 class="about-skill__title">
+                            Arquitectura web
+                        </h3>
+
+                        <p class="about-skill__description">
+                            Estructuras digitales organizadas para
+                            comunicar, orientar y convertir.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             VALORES
+             ==================================== -->
+
+        <section
+            class="about-values section"
+            aria-labelledby="about-values-title"
+        >
+
+            <div class="container about-values__container">
+
+                <div class="about-values__intro">
+
+                    <p class="about-values__eyebrow">
+                        Valores
+                    </p>
+
+                    <h2
+                        class="about-values__title"
+                        id="about-values-title"
+                    >
+                        Cómo entiendo un buen proyecto.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-values__list">
+
+                    <article class="about-value">
+
+                        <h3 class="about-value__title">
+                            Claridad
+                        </h3>
+
+                        <p class="about-value__description">
+                            La información debe ser fácil de entender
+                            y la experiencia debe sentirse natural.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-value">
+
+                        <h3 class="about-value__title">
+                            Precisión
+                        </h3>
+
+                        <p class="about-value__description">
+                            Cada elemento debe responder a una necesidad
+                            concreta dentro del proyecto.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-value">
+
+                        <h3 class="about-value__title">
+                            Profesionalismo
+                        </h3>
+
+                        <p class="about-value__description">
+                            El resultado debe cuidar tanto la experiencia
+                            visible como la calidad de su implementación.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             CTA
+             ==================================== -->
+
+        <section
+            class="about-cta section section--large"
+            aria-labelledby="about-cta-title"
+        >
+
+            <div class="container about-cta__container">
+
+                <div class="about-cta__content">
+
+                    <p class="about-cta__eyebrow">
+                        Siguiente paso
+                    </p>
+
+                    <h2
+                        class="about-cta__title"
+                        id="about-cta-title"
+                    >
+                        Conoce las soluciones que puedo
+                        desarrollar para tu proyecto.
+                    </h2>
+
+                    <a
+                        class="button button--primary"
+                        href="/pages/servicios.html"
+                    >
+                        Ver servicios
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container site-footer__inner">
+
+            <div class="site-footer__brand">
+
+                <a
+                    class="site-footer__brand-link"
+                    href="/"
+                    aria-label="Jonathan Bonilla — Inicio"
+                >
+                    Jonathan Bonilla
+                </a>
+
+                <p class="site-footer__description">
+                    Desarrollo web profesional para negocios y marcas.
+                </p>
+
+            </div>
+
+
+            <nav
+                class="site-footer__navigation"
+                aria-label="Navegación del pie de página"
+            >
+
+                <ul class="site-footer__navigation-list">
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="/pages/sobre-mi.html"
+                            aria-current="page"
+                        >
+                            Sobre mí
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="/pages/servicios.html"
+                        >
+                            Servicios
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="/pages/projects.html"
+                        >
+                            Proyectos
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="/pages/proces.html"
+                        >
+                            Proceso
+                        </a>
+
+                    </li>
+
+
+                    <li class="site-footer__navigation-item">
+
+                        <a
+                            class="site-footer__navigation-link"
+                            href="/pages/contact.html"
+                        >
+                            Contacto
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="site-footer__meta">
+
+                <p class="site-footer__copyright">
+                    © 2026 Jonathan Bonilla
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

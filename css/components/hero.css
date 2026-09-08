@@ -1,0 +1,107 @@
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    padding-block: var(--space-16);
+}
+
+.hero__container {
+    display: grid;
+    gap: var(--space-12);
+}
+
+.hero__content {
+    max-width: 720px;
+}
+
+.hero__eyebrow {
+    margin-bottom: var(--space-4);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--color-accent);
+}
+
+.hero__title {
+    max-width: 16ch;
+
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+
+    color: var(--color-text-primary);
+}
+
+.hero__description {
+    max-width: 60ch;
+    margin-top: var(--space-6);
+
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text-secondary);
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-6);
+
+    margin-top: var(--space-8);
+}
+
+.hero__secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    min-height: 44px;
+
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+
+    color: var(--color-text-primary);
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast) var(--ease-standard);
+}
+
+.hero__secondary-link:hover,
+.hero__secondary-link:focus-visible {
+    color: var(--color-accent);
+}
+
+.hero__secondary-link span {
+    display: inline-block;
+    transition: transform var(--transition-fast) var(--ease-standard);
+}
+
+.hero__secondary-link:hover span,
+.hero__secondary-link:focus-visible span {
+    transform: translateX(4px);
+}
+
+.hero__meta {
+    margin-top: var(--space-6);
+
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-ui);
+
+    color: var(--color-text-secondary);
+}
+
+.hero__visual {
+    min-height: 320px;
+}
+
+

@@ -1,0 +1,159 @@
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* ========================================
+   DESKTOP
+   ======================================== */
+
+@media (min-width: 768px) {
+
+    .hero {
+        padding-block: var(--space-24);
+    }
+
+    .hero__container {
+        grid-template-columns:
+            minmax(0, 1.1fr)
+            minmax(320px, 0.9fr);
+
+        align-items: center;
+        gap: var(--space-16);
+    }
+
+    .hero__title {
+        font-size: var(--font-size-6xl);
+    }
+
+    .hero__visual {
+        min-height: 480px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .problem {
+        padding-block: var(--space-24);
+    }
+
+    .problem__items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-8);
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* SOLUTION */
+
+.solution {
+    padding-block: var(--space-24);
+}
+
+.solution__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+}
+}
+
+
+@media (min-width: 768px) {
+
+/* PROJECTS */
+
+.projects {
+    padding-block: var(--space-24);
+}
+
+.projects__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+}
+
+.project-card {
+    grid-template-rows: auto 1fr;
+}
+
+.project-card__media {
+    aspect-ratio: 4 / 3;
+}
+}
+
+@media (min-width: 768px) {
+
+    /* SERVICES */
+
+    .services {
+        padding-block: var(--space-24);
+    }
+
+    .services__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-8);
+    }
+
+    .service-card {
+        padding: var(--space-10);
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    /* DIFFERENTIATORS */
+
+    .differentiators {
+        padding-block: var(--space-24);
+    }
+
+    .differentiators__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--space-12);
+        row-gap: var(--space-8);
+    }
+
+    .differentiator-card {
+        padding-block: var(--space-8);
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    /* PROCESS */
+
+    .process {
+        padding-block: var(--space-24);
+    }
+
+    .process__list {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--space-6);
+    }
+
+    .process-step {
+        grid-template-rows: auto 1fr;
+        gap: var(--space-6);
+        padding-block: var(--space-6);
+    }
+
+    .process-step__content {
+        gap: var(--space-4);
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    /* FINAL CTA */
+
+    .final-cta {
+        padding-block: var(--space-32);
+    }
+
+    .final-cta__title {
+        font-size: var(--font-size-5xl);
+    }
+
+}

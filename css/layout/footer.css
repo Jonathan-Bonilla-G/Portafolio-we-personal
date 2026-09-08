@@ -1,0 +1,94 @@
+/* ========================================
+   SITE FOOTER
+   ======================================== */
+
+.site-footer {
+    padding-block: var(--space-12);
+
+    color: var(--color-background);
+    background-color: var(--color-dark);
+}
+
+
+/* ========================================
+   FOOTER INNER
+   ======================================== */
+
+.site-footer__inner {
+    display: grid;
+    gap: var(--space-8);
+}
+
+
+/* ========================================
+   BRAND
+   ======================================== */
+
+.site-footer__brand-link {
+    display: inline-block;
+
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+}
+
+.site-footer__description {
+    max-width: 45ch;
+    margin-top: var(--space-3);
+
+    color: var(--color-background);
+}
+
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.site-footer__navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.site-footer__navigation-link {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+
+    color: var(--color-background);
+
+    transition:
+        color var(--transition-fast) var(--ease-standard);
+}
+
+.site-footer__navigation-link:hover,
+.site-footer__navigation-link:focus-visible {
+    color: var(--color-accent);
+}
+
+
+/* ========================================
+   META
+   ======================================== */
+
+.site-footer__copyright {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (min-width: 768px) {
+
+    .site-footer__inner {
+        grid-template-columns: 2fr 1fr 1fr;
+        align-items: start;
+    }
+
+}

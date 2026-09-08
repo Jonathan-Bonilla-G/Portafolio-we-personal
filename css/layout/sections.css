@@ -1,0 +1,15 @@
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.section {
+    padding-block: var(--space-16);
+}
+
+.section--large {
+    padding-block: var(--space-24);
+}
+
+.section--compact {
+    padding-block: var(--space-12);
+}
