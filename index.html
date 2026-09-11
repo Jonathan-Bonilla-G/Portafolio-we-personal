@@ -12,7 +12,7 @@
         <meta name="author" content="Jonathan Bonilla">
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#111111">
-        <meta name="canonical" content="https://www.jonathanbonilla.com/">
+        <link rel="canonical" href="https://www.jonathanbonilla.com/">
 
         <!-- Favicon -->
         
@@ -101,9 +101,21 @@
                     aria-controls="site-navigation"
                     aria-label="Abrir menú de navegación"
                 >
-                    <span class="site-header__menu-label">
-                        Menú
-                    </span>
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        class="lucide lucide-menu">
+                            <path d="M4 5h16"/>
+                            <path d="M4 12h16"/>
+                            <path d="M4 19h16"/>
+                    </svg>
                 </button>
 
                 <nav
@@ -111,12 +123,36 @@
                     id="site-navigation"
                     aria-label="Navegación principal"
                 >
+
+                    <button
+                    class="site-header__close"
+                    type="button"
+                    aria-label="Cerrar menú de navegación"
+                    >
+
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="24" 
+                            height="24" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            stroke-width="2" 
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            class="lucide lucide-x">
+                                <path d="M18 6 6 18"/>
+                                <path d="m6 6 12 12"/>
+                        </svg>
+
+                    </button>
+
                     <ul class="site-navigation__list">
 
                         <li class="site-navigation__item">
                             <a
                                 class="site-navigation__link"
-                                href="/pages/about.html"
+                                href="pages/about.html"
                             >
                                 Sobre mí
                             </a>
@@ -125,7 +161,7 @@
                         <li class="site-navigation__item">
                             <a
                                 class="site-navigation__link"
-                                href="/pages/services.html"
+                                href="pages/services.html"
                             >
                                 Servicios
                             </a>
@@ -134,7 +170,7 @@
                         <li class="site-navigation__item">
                             <a
                                 class="site-navigation__link"
-                                href="/pages/projects.html"
+                                href="pages/projects.html"
                             >
                                 Proyectos
                             </a>
@@ -143,7 +179,7 @@
                         <li class="site-navigation__item">
                             <a
                                 class="site-navigation__link"
-                                href="/pages/process.html"
+                                href="pages/process.html"
                             >
                                 Proceso
                             </a>
@@ -152,7 +188,7 @@
                         <li class="site-navigation__item">
                             <a
                                 class="site-navigation__link"
-                                href="/pages/contact.html"
+                                href="pages/contact.html"
                                 
                             >
                                 Contacto
@@ -160,14 +196,14 @@
                         </li>
 
                     </ul>
-                </nav>
 
-                <a
-                    class="button button--primary site-header__cta"
-                    href="/pages/contact.html"
-                >
-                    Contactar
-                </a>
+                    <a
+                        class="button button--primary site-header__cta"
+                        href="pages/contact.html"
+                    >
+                        Contactar
+                    </a>
+                </nav>
 
             </div>
         </header>
@@ -202,14 +238,14 @@
 
                             <a
                                 class="button button--primary"
-                                href="/pages/contact.html"
+                                href="pages/contact.html"
                             >
                                 Contactar
                             </a>
 
                             <a
                                 class="hero__secondary-link"
-                                href="/pages/projects.html"
+                                href="pages/projects.html"
                             >
                                 Ver proyectos
                                 <span aria-hidden="true">→</span>
@@ -244,13 +280,11 @@
                         </p>
 
                         <h2 class="problem__title" id="problem-title">
-                            Tener presencia digital no es suficiente.
+                            Tu sitio web debería ayudarte a conseguir oportunidades, no perderlas.
                         </h2>
 
                         <p class="problem__description">
-                            Tu sitio web debe comunicar con claridad,
-                            transmitir confianza y ayudar a que las personas
-                            den el siguiente paso.
+                            Una web que no comunica claramente lo que ofreces, no guía al visitante o dificulta el contacto puede hacer que pierdas oportunidades de negocio.
                         </p>
 
                     </div>
@@ -260,13 +294,12 @@
                         <article class="problem__item">
 
                             <h3 class="problem__item-title">
-                                Una imagen poco profesional
+                                Tu negocio no refleja su verdadero valor
                             </h3>
 
                             <p class="problem__item-description">
-                                Una presencia digital desactualizada puede
-                                hacer que un negocio no refleje la calidad
-                                de sus productos o servicios.
+                                Una presencia digital desactualizada puede hacer que tus clientes
+                                perciban menos valor del que realmente ofreces.
                             </p>
 
                         </article>
@@ -274,29 +307,25 @@
                         <article class="problem__item">
 
                             <h3 class="problem__item-title">
-                                Información difícil de encontrar
+                                Tus clientes no encuentran lo que necesitan
                             </h3>
 
                             <p class="problem__item-description">
-                                Cuando la información no está organizada,
-                                el visitante puede abandonar el sitio antes
-                                de encontrar lo que necesita.
+                                Cuando la información está desorganizada, el visitante puede
+                                abandonar antes de entender tu oferta o decidir contactarte.
                             </p>
-
                         </article>
 
                         <article class="problem__item">
 
                             <h3 class="problem__item-title">
-                                Pocas oportunidades de contacto
+                                Las visitas no se convierten en conversaciones
                             </h3>
 
                             <p class="problem__item-description">
-                                Un sitio sin una estrategia clara puede
-                                recibir visitas sin convertirlas en
-                                conversaciones con potenciales clientes.
+                                Una web sin una estrategia clara puede recibir visitas sin
+                                llevarlas hacia una acción que genere nuevas oportunidades.
                             </p>
-
                         </article>
 
                     </div>
@@ -318,13 +347,13 @@
                         </p>
 
                         <h2 class="solution__title" id="solution-title">
-                            Desarrollo sitios web pensados para cada etapa de tu negocio.
+                            Una web pensada para ayudarte a crecer.
                         </h2>
 
                         <p class="solution__description">
-                            Desde una landing enfocada en presencia y conversión
-                            hasta sitios profesionales y soluciones web adaptadas
-                            a necesidades específicas.
+                            Desarrollo la solución adecuada para tu negocio, desde una landing
+                            enfocada en captar oportunidades hasta una experiencia web completa
+                            y personalizada.
                         </p>
 
                     </div>
@@ -338,12 +367,12 @@
                             </p>
 
                             <h3 class="solution__item-title">
-                                Presencia y conversión
+                                Convierte tu presencia en oportunidades
                             </h3>
 
                             <p class="solution__item-description">
-                                Una página estratégica para presentar tu negocio,
-                                comunicar tu propuesta y facilitar que tus clientes
+                                Una landing estratégica para presentar tu negocio con claridad,
+                                comunicar tu propuesta de valor y facilitar que nuevos clientes
                                 den el siguiente paso.
                             </p>
 
@@ -356,13 +385,13 @@
                             </p>
 
                             <h3 class="solution__item-title">
-                                Una presencia digital completa
+                                Organiza y presenta todo tu negocio
                             </h3>
 
                             <p class="solution__item-description">
-                                Una arquitectura web pensada para negocios que
-                                necesitan organizar diferentes contenidos, servicios
-                                y proyectos dentro de un sitio profesional.
+                                Un sitio profesional para reunir tus servicios, proyectos e
+                                información importante en una experiencia clara que genere
+                                confianza en tus visitantes.
                             </p>
 
                         </article>
@@ -374,13 +403,12 @@
                             </p>
 
                             <h3 class="solution__item-title">
-                                Una solución adaptada a tu negocio
+                                Una solución construida alrededor de tu negocio
                             </h3>
 
                             <p class="solution__item-description">
-                                Proyectos que requieren una solución más específica,
-                                integraciones o funcionalidades desarrolladas según
-                                las necesidades del negocio.
+                                Para necesidades específicas que requieren mayor personalización,
+                                integraciones o funcionalidades desarrolladas según tu operación.
                             </p>
 
                         </article>
@@ -404,13 +432,13 @@
                         </p>
 
                         <h2 class="projects__title" id="projects-title">
-                            Proyectos seleccionados que muestran cómo trabajo.
+                            Proyectos que convierten necesidades en experiencias digitales.
                         </h2>
 
                         <p class="projects__description">
-                            Una selección de proyectos diseñados para resolver
-                            diferentes necesidades de presencia digital, experiencia
-                            y conversión.
+                            Conoce algunos de los proyectos que he desarrollado y descubre
+                            cómo una estrategia, un buen diseño y una implementación cuidada
+                            pueden transformar la presencia digital de un negocio.
                         </p>
 
                     </div>
@@ -444,7 +472,7 @@
 
                                 <a
                                     class="project-card__link"
-                                    href="/pages/project-photographer.html"
+                                    href="pages/project-photographer.html"
                                     aria-label="Ver caso de estudio de Portafolio Photographer"
                                 >
                                     Ver caso de estudio
@@ -481,7 +509,7 @@
 
                                 <a
                                     class="project-card__link"
-                                    href="#"
+                                    href="pages/projects.html"
                                     aria-label="Ver caso de estudio de Barbería Local"
                                 >
                                     Ver caso de estudio
@@ -518,7 +546,7 @@
 
                                 <a
                                     class="project-card__link"
-                                    href="#"
+                                    href="pages/projects.html"
                                     aria-label="Ver caso de estudio de Hotel Boutique"
                                 >
                                     Ver caso de estudio
@@ -535,7 +563,7 @@
 
                         <a
                             class="button button--secondary"
-                            href="/pages/projects.html"
+                            href="pages/projects.html"
                         >
                             Ver todos los proyectos
                         </a>
@@ -559,13 +587,13 @@
                         </p>
 
                         <h2 class="services__title" id="services-title">
-                            Soluciones web diseñadas para diferentes necesidades.
+                            Elige la solución que necesita tu negocio.
                         </h2>
 
                         <p class="services__description">
-                            Elige el nivel de solución que mejor se adapta a tu negocio,
-                            desde una landing clara y profesional hasta experiencias web
-                            más completas y personalizadas.
+                            Desde una landing enfocada en captar oportunidades hasta una web
+                            profesional más completa. Cada solución responde a un nivel
+                            diferente de necesidad, estrategia y personalización.
                         </p>
 
                     </div>
@@ -636,7 +664,7 @@
 
                                 <a
                                     class="service-card__link"
-                                    href="/pages/services.html#landing-profesional"
+                                    href="pages/services.html#landing-profesional"
                                     aria-label="Conocer el servicio Landing Profesional"
                                 >
                                     Conocer servicio
@@ -674,7 +702,7 @@
 
                                 <a
                                     class="service-card__link"
-                                    href="/pages/services.html#landing-premium"
+                                    href="pages/services.html#landing-premium"
                                     aria-label="Conocer el servicio Landing Premium"
                                 >
                                     Conocer servicio
@@ -691,7 +719,7 @@
 
                         <a
                             class="button button--secondary"
-                            href="/pages/services.html"
+                            href="pages/services.html"
                         >
                             Ver todos los servicios
                         </a>
@@ -1006,7 +1034,7 @@
 
                         <a
                             class="button button--primary final-cta__button"
-                            href="/pages/contact.html"
+                            href="pages/contact.html"
                         >
                             Hablemos de tu proyecto
                         </a>
@@ -1050,7 +1078,7 @@
                         <li class="site-footer__navigation-item">
                             <a
                                 class="site-footer__navigation-link"
-                                href="/pages/about.html"
+                                href="pages/about.html"
                             >
                                 Sobre mí
                             </a>
@@ -1059,7 +1087,7 @@
                         <li class="site-footer__navigation-item">
                             <a
                                 class="site-footer__navigation-link"
-                                href="/pages/services.html"
+                                href="pages/services.html"
                             >
                                 Servicios
                             </a>
@@ -1068,7 +1096,7 @@
                         <li class="site-footer__navigation-item">
                             <a
                                 class="site-footer__navigation-link"
-                                href="/pages/projects.html"
+                                href="pages/projects.html"
                             >
                                 Proyectos
                             </a>
@@ -1077,7 +1105,7 @@
                         <li class="site-footer__navigation-item">
                             <a
                                 class="site-footer__navigation-link"
-                                href="/pages/process.html"
+                                href="pages/process.html"
                             >
                                 Proceso
                             </a>
@@ -1086,7 +1114,7 @@
                         <li class="site-footer__navigation-item">
                             <a
                                 class="site-footer__navigation-link"
-                                href="/pages/contact.html"
+                                href="pages/contact.html"
                             >
                                 Contacto
                             </a>

@@ -1,19 +1,31 @@
 /* ========================================
    SITE NAVIGATION
    ======================================== */
-.site-navigation{
-    margin-inline: auto;
+
+.site-navigation {
+    display: contents;
 }
+
 
 /* ========================================
    NAVIGATION LIST
    ======================================== */
 
 .site-navigation__list {
+    grid-column: 2;
+
     display: flex;
     align-items: center;
+
     gap: var(--space-6);
+
+    justify-self: center;
 }
+
+
+/* ========================================
+   NAVIGATION LINK
+   ======================================== */
 
 .site-navigation__link {
     display: inline-flex;
@@ -28,8 +40,10 @@
     color: var(--color-text-primary);
 
     transition:
-        color var(--transition-fast) var(--ease-standard);
+        color var(--transition-fast)
+        var(--ease-standard);
 }
+
 
 /* ========================================
    HOVER
@@ -39,6 +53,7 @@
     color: var(--color-accent);
 }
 
+
 /* ========================================
    CURRENT PAGE
    ======================================== */
@@ -46,6 +61,7 @@
 .site-navigation__link[aria-current="page"] {
     color: var(--color-accent);
 }
+
 
 /* ========================================
    FOCUS
@@ -55,28 +71,148 @@
     color: var(--color-accent);
 }
 
+
+/* ========================================
+   DESKTOP CTA
+   ======================================== */
+
+.site-navigation .site-header__cta {
+    grid-column: 3;
+
+    justify-self: end;
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
 @media (max-width: 767px) {
 
+    /* ----------------------------------------
+       NAVIGATION PANEL
+       ---------------------------------------- */
+
     .site-navigation {
-        display: none;
-        flex-basis: 100%;
-        width: 100%;
-        padding-block: var(--space-4);
-    }
+        position: fixed;
 
-    .site-navigation.is-open {
-        display: block;
-    }
+        inset-block: 0;
+        inset-inline-end: 0;
 
-    .site-navigation__list {
+        width: min(80%, 360px);
+        height: 100dvh;
+
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: var(--space-2);
+
+        margin: 0;
+
+        padding:
+            var(--space-4)
+            var(--space-4)
+            var(--space-6);
+
+        background-color: var(--color-background);
+
+        border-inline-start:
+            var(--border-width-sm)
+            solid
+            var(--border-color-subtle);
+
+        box-shadow: var(--shadow-lg);
+
+        transform: translateX(100%);
+
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform var(--transition-base)
+            var(--ease-standard),
+            visibility var(--transition-base)
+            var(--ease-standard);
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        z-index: var(--z-dropdown);
     }
+
+
+    /* ----------------------------------------
+       OPEN
+       ---------------------------------------- */
+
+    .site-navigation.is-open {
+        transform: translateX(0);
+
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* ----------------------------------------
+       CLOSE BUTTON
+       ---------------------------------------- */
+
+    .site-navigation .site-header__close {
+        display: inline-flex;
+
+        align-self: flex-end;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ----------------------------------------
+       NAVIGATION LIST
+       ---------------------------------------- */
+
+    .site-navigation__list {
+        grid-column: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: var(--space-2);
+
+        margin-top: var(--space-8);
+
+        justify-self: auto;
+    }
+
+
+    /* ----------------------------------------
+       NAVIGATION LINK
+       ---------------------------------------- */
 
     .site-navigation__link {
         width: 100%;
         min-height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        padding-inline: var(--space-2);
+    }
+
+
+    /* ----------------------------------------
+       CTA
+       ---------------------------------------- */
+
+    .site-navigation .site-header__cta {
+        grid-column: auto;
+
+        display: inline-flex;
+
+        width: 100%;
+
+        margin-top: auto;
+
+        justify-self: auto;
     }
 
 }

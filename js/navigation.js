@@ -11,9 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.site-header');
     const menuToggle = document.querySelector('.site-header__menu-toggle');
     const navigation = document.querySelector('#site-navigation');
+    const closeButton = document.querySelector('.site-header__close');
 
     // Guardia de seguridad básica
-    if (!header || !menuToggle || !navigation) return;
+    if (
+        !header ||
+        !menuToggle ||
+        !navigation ||
+        !closeButton
+    ) {
+        return;
+    }
 
     const navigationLinks = navigation.querySelectorAll(
         '.site-navigation__link'
@@ -23,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------
     // 2. MEDIA QUERY — DESKTOP
     // --------------------------------------------------
+    // Debe coincidir con el breakpoint del CSS.
+    // Mobile: < 768px
+    // Desktop: >= 768px
 
     const desktopMediaQuery = window.matchMedia(
         '(min-width: 768px)'
@@ -48,37 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 4. CONTROL DEL ESTADO DEL MENÚ
+    // 4. SINCRONIZAR ACCESIBILIDAD
     // --------------------------------------------------
 
-    const setMenuState = (forceState) => {
+    const syncAccessibilityState = (isOpen) => {
 
-        const isOpen =
-            typeof forceState === 'boolean'
-                ? forceState
-                : !navigation.classList.contains('is-open');
-
-
-        // Estado visual
-        navigation.classList.toggle('is-open', isOpen);
-        header.classList.toggle('is-menu-open', isOpen);
-
-
-        // Accesibilidad del botón
-        menuToggle.setAttribute(
-            'aria-expanded',
-            String(isOpen)
-        );
-
-        menuToggle.setAttribute(
-            'aria-label',
-            isOpen
-                ? 'Cerrar menú de navegación'
-                : 'Abrir menú de navegación'
-        );
-
-
-        // Estado de accesibilidad del menú
         if (desktopMediaQuery.matches) {
 
             navigation.setAttribute(
@@ -99,31 +84,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-
-        // Bloquear / liberar scroll
-        document.body.style.overflow = isOpen
-            ? 'hidden'
-            : '';
+    };
 
 
-        // Gestión del foco
-        if (isOpen) {
+    // --------------------------------------------------
+    // 5. CONTROL DEL ESTADO DEL MENÚ
+    // --------------------------------------------------
 
-            const focusableElements =
-                getFocusableElements();
+    const setMenuState = (forceState) => {
 
-            if (focusableElements.length) {
+        const isOpen =
+            typeof forceState === 'boolean'
+                ? forceState
+                : !navigation.classList.contains('is-open');
 
-                requestAnimationFrame(() => {
-                    focusableElements[0].focus();
-                });
 
-            }
+        // ------------------------------------------
+        // ESTADO VISUAL
+        // ------------------------------------------
 
-        } else if (!desktopMediaQuery.matches) {
+        navigation.classList.toggle(
+            'is-open',
+            isOpen
+        );
+
+        header.classList.toggle(
+            'is-menu-open',
+            isOpen
+        );
+
+
+        // ------------------------------------------
+        // BOTÓN HAMBURGUESA
+        // ------------------------------------------
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+
+        menuToggle.setAttribute(
+            'aria-label',
+            isOpen
+                ? 'Cerrar menú de navegación'
+                : 'Abrir menú de navegación'
+        );
+
+
+        // ------------------------------------------
+        // ACCESIBILIDAD
+        // ------------------------------------------
+
+        syncAccessibilityState(isOpen);
+
+
+        // ------------------------------------------
+        // BLOQUEO DE SCROLL
+        // ------------------------------------------
+
+        document.body.style.overflow =
+            isOpen && !desktopMediaQuery.matches
+                ? 'hidden'
+                : '';
+
+
+        // ------------------------------------------
+        // GESTIÓN DEL FOCO
+        // ------------------------------------------
+
+        if (
+            isOpen &&
+            !desktopMediaQuery.matches
+        ) {
 
             requestAnimationFrame(() => {
+
+                closeButton.focus();
+
+            });
+
+        } else if (
+            !isOpen &&
+            !desktopMediaQuery.matches
+        ) {
+
+            requestAnimationFrame(() => {
+
                 menuToggle.focus();
+
             });
 
         }
@@ -132,14 +180,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 5. HEADER — ESTADO AL HACER SCROLL
+    // 6. ESTADO DEL HEADER AL HACER SCROLL
     // --------------------------------------------------
 
     let isScrollTicking = false;
 
     const handleScroll = () => {
 
-        if (isScrollTicking) return;
+        if (isScrollTicking) {
+            return;
+        }
 
         window.requestAnimationFrame(() => {
 
@@ -158,189 +208,215 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 6. EVENTOS DE INTERACCIÓN
+    // 7. ABRIR MENÚ
     // --------------------------------------------------
 
-    // Botón hamburguesa
     menuToggle.addEventListener(
         'click',
-        () => setMenuState()
+        () => {
+
+            setMenuState(true);
+
+        }
     );
 
 
-    // Cerrar al hacer clic fuera del menú
-    document.addEventListener('click', (event) => {
-
-        if (
-            !navigation.classList.contains('is-open') ||
-            desktopMediaQuery.matches
-        ) {
-            return;
-        }
-
-        const clickedInsideNavigation =
-            navigation.contains(event.target);
-
-        const clickedMenuToggle =
-            menuToggle.contains(event.target);
-
-        if (
-            !clickedInsideNavigation &&
-            !clickedMenuToggle
-        ) {
-            setMenuState(false);
-        }
-
-    });
-
-
-    // Cerrar al hacer clic en un enlace
-    navigationLinks.forEach((link) => {
-
-        link.addEventListener('click', () => {
-
-            if (!desktopMediaQuery.matches) {
-                setMenuState(false);
-            }
-
-        });
-
-    });
-
-
     // --------------------------------------------------
-    // 7. TECLADO — ACCESIBILIDAD Y FOCUS TRAP
+    // 8. CERRAR MENÚ
     // --------------------------------------------------
 
-    document.addEventListener('keydown', (event) => {
-
-        // ESCAPE — cerrar menú
-        if (
-            event.key === 'Escape' &&
-            navigation.classList.contains('is-open')
-        ) {
-
-            event.preventDefault();
+    closeButton.addEventListener(
+        'click',
+        () => {
 
             setMenuState(false);
 
-            return;
-
         }
-
-
-        // Focus trap
-        if (
-            event.key !== 'Tab' ||
-            !navigation.classList.contains('is-open') ||
-            desktopMediaQuery.matches
-        ) {
-            return;
-        }
-
-
-        const menuFocusables =
-            Array.from(getFocusableElements());
-
-
-        // El botón hamburguesa forma parte
-        // del ciclo de foco
-        const focusableElements = [
-            menuToggle,
-            ...menuFocusables
-        ];
-
-
-        if (!focusableElements.length) return;
-
-
-        const firstFocusable =
-            focusableElements[0];
-
-        const lastFocusable =
-            focusableElements[
-                focusableElements.length - 1
-            ];
-
-
-        // TAB en el último elemento
-        // → vuelve al primero
-        if (
-            !event.shiftKey &&
-            document.activeElement === lastFocusable
-        ) {
-
-            event.preventDefault();
-
-            firstFocusable.focus();
-
-            return;
-
-        }
-
-
-        // SHIFT + TAB en el primero
-        // → vuelve al último
-        if (
-            event.shiftKey &&
-            document.activeElement === firstFocusable
-        ) {
-
-            event.preventDefault();
-
-            lastFocusable.focus();
-
-        }
-
-    });
+    );
 
 
     // --------------------------------------------------
-    // 8. REACCIÓN A CAMBIOS DE PANTALLA
+    // 9. CERRAR AL HACER CLICK FUERA
     // --------------------------------------------------
 
-    desktopMediaQuery.addEventListener(
-        'change',
+    document.addEventListener(
+        'click',
         (event) => {
 
-            // ------------------------------------------
-            // DESKTOP
-            // ------------------------------------------
-
-            if (event.matches) {
-
-                navigation.classList.remove('is-open');
-                header.classList.remove('is-menu-open');
-
-                menuToggle.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-                menuToggle.setAttribute(
-                    'aria-label',
-                    'Abrir menú de navegación'
-                );
-
-                navigation.setAttribute(
-                    'aria-hidden',
-                    'false'
-                );
-
-                navigation.inert = false;
-
-                document.body.style.overflow = '';
-
+            if (
+                !navigation.classList.contains('is-open') ||
+                desktopMediaQuery.matches
+            ) {
                 return;
             }
 
 
+            const clickedInsideNavigation =
+                navigation.contains(event.target);
+
+            const clickedMenuToggle =
+                menuToggle.contains(event.target);
+
+
+            if (
+                !clickedInsideNavigation &&
+                !clickedMenuToggle
+            ) {
+
+                setMenuState(false);
+
+            }
+
+        }
+    );
+
+
+    // --------------------------------------------------
+    // 10. CERRAR AL HACER CLICK EN UN ENLACE
+    // --------------------------------------------------
+
+    navigationLinks.forEach((link) => {
+
+        link.addEventListener(
+            'click',
+            () => {
+
+                if (!desktopMediaQuery.matches) {
+
+                    setMenuState(false);
+
+                }
+
+            }
+        );
+
+    });
+
+
+    // --------------------------------------------------
+    // 11. TECLADO — ESCAPE
+    // --------------------------------------------------
+
+    document.addEventListener(
+        'keydown',
+        (event) => {
+
+            if (
+                event.key === 'Escape' &&
+                navigation.classList.contains('is-open') &&
+                !desktopMediaQuery.matches
+            ) {
+
+                event.preventDefault();
+
+                setMenuState(false);
+
+            }
+
+        }
+    );
+
+
+    // --------------------------------------------------
+    // 12. FOCUS TRAP
+    // --------------------------------------------------
+
+    document.addEventListener(
+        'keydown',
+        (event) => {
+
+            if (
+                event.key !== 'Tab' ||
+                !navigation.classList.contains('is-open') ||
+                desktopMediaQuery.matches
+            ) {
+                return;
+            }
+
+
+            const menuFocusables =
+                Array.from(
+                    getFocusableElements()
+                );
+
+
+            if (!menuFocusables.length) {
+                return;
+            }
+
+
+            const firstFocusable =
+                menuFocusables[0];
+
+            const lastFocusable =
+                menuFocusables[
+                    menuFocusables.length - 1
+                ];
+
+
+            // --------------------------------------
+            // TAB
+            // Último → Primero
+            // --------------------------------------
+
+            if (
+                !event.shiftKey &&
+                document.activeElement === lastFocusable
+            ) {
+
+                event.preventDefault();
+
+                firstFocusable.focus();
+
+                return;
+
+            }
+
+
+            // --------------------------------------
+            // SHIFT + TAB
+            // Primero → Último
+            // --------------------------------------
+
+            if (
+                event.shiftKey &&
+                document.activeElement === firstFocusable
+            ) {
+
+                event.preventDefault();
+
+                lastFocusable.focus();
+
+            }
+
+        }
+    );
+
+
+    // --------------------------------------------------
+    // 13. CAMBIO MOBILE ↔ DESKTOP
+    // --------------------------------------------------
+
+    desktopMediaQuery.addEventListener(
+        'change',
+        () => {
+
             // ------------------------------------------
-            // MOBILE
+            // REINICIAR ESTADO DEL MENÚ
             // ------------------------------------------
 
-            navigation.classList.remove('is-open');
-            header.classList.remove('is-menu-open');
+            navigation.classList.remove(
+                'is-open'
+            );
+
+            header.classList.remove(
+                'is-menu-open'
+            );
+
+
+            // ------------------------------------------
+            // BOTÓN HAMBURGUESA
+            // ------------------------------------------
 
             menuToggle.setAttribute(
                 'aria-expanded',
@@ -352,12 +428,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Abrir menú de navegación'
             );
 
-            navigation.setAttribute(
-                'aria-hidden',
-                'true'
-            );
 
-            navigation.inert = true;
+            // ------------------------------------------
+            // ACCESIBILIDAD
+            // ------------------------------------------
+
+            syncAccessibilityState(false);
+
+
+            // ------------------------------------------
+            // SCROLL
+            // ------------------------------------------
 
             document.body.style.overflow = '';
 
@@ -366,18 +447,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 9. LISTENER DE SCROLL
+    // 14. LISTENER DE SCROLL
     // --------------------------------------------------
 
     window.addEventListener(
         'scroll',
         handleScroll,
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
 
     // --------------------------------------------------
-    // 10. ESTADO INICIAL
+    // 15. ESTADO INICIAL
     // --------------------------------------------------
 
     menuToggle.setAttribute(
@@ -390,29 +473,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'Abrir menú de navegación'
     );
 
-
-    if (desktopMediaQuery.matches) {
-
-        navigation.setAttribute(
-            'aria-hidden',
-            'false'
-        );
-
-        navigation.inert = false;
-
-    } else {
-
-        navigation.setAttribute(
-            'aria-hidden',
-            'true'
-        );
-
-        navigation.inert = true;
-
-    }
+    syncAccessibilityState(false);
 
 
-    // Estado inicial del header
+    // --------------------------------------------------
+    // 16. ESTADO INICIAL DEL HEADER
+    // --------------------------------------------------
+
     handleScroll();
 
 });

@@ -4,14 +4,18 @@
 
 .site-header {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline: 0;
 
-    width: 100%;
     z-index: var(--z-header);
 
+    width: 100%;
+
     background-color: var(--color-background);
-    border-bottom: var(--border-width-sm) solid var(--border-color-subtle);
+    border-bottom:
+        var(--border-width-sm)
+        solid
+        var(--border-color-subtle);
 }
 
 
@@ -22,9 +26,10 @@
 .site-header__inner {
     min-height: 72px;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+
     align-items: center;
-    justify-content: space-between;
 
     gap: var(--space-6);
 }
@@ -35,11 +40,28 @@
    ======================================== */
 
 .site-header__brand {
+    justify-self: start;
+
     flex-shrink: 0;
 
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
+
+    color: var(--color-text-primary);
+
+    transition:
+        color var(--transition-fast)
+        var(--ease-standard);
+}
+
+
+/* ========================================
+   BRAND — HOVER
+   ======================================== */
+
+.site-header__brand:hover {
+    color: var(--color-accent);
 }
 
 
@@ -48,6 +70,8 @@
    ======================================== */
 
 .site-header__cta {
+    justify-self: end;
+
     flex-shrink: 0;
 }
 
@@ -62,30 +86,45 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 44px;
-    min-height: 44px;
+    width: 44px;
+    height: 44px;
 
     padding: var(--space-2);
 
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+   ======================================== */
+
+.site-header__close {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: var(--space-2);
 
     color: var(--color-text-primary);
 }
+
+
+/* ========================================
+   MAIN OFFSET
+   ======================================== */
 
 .site-header + main {
     padding-top: 72px;
 }
 
-@media (max-width: 767px) {
-    .site-header + main {
-        padding-top: 64px;
-    }
-}
 
 /* ========================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ======================================== */
 
 @media (max-width: 767px) {
@@ -93,7 +132,29 @@
     .site-header__inner {
         min-height: 64px;
 
-        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--space-4);
+    }
+
+
+    /* ----------------------------------------
+       MAIN OFFSET
+       ---------------------------------------- */
+
+    .site-header + main {
+        padding-top: 64px;
+    }
+
+
+    /* ----------------------------------------
+       BRAND
+       ---------------------------------------- */
+
+    .site-header__brand {
+        justify-self: auto;
     }
 
 
@@ -103,27 +164,52 @@
 
     .site-header__menu-toggle {
         display: inline-flex;
-        margin-left: auto;
+
+        margin-inline-start: auto;
+
+        flex-shrink: 0;
     }
 
 
     /* ----------------------------------------
-       HEADER CTA
+       CLOSE BUTTON
        ---------------------------------------- */
 
-    .site-header .site-header__cta {
-    display: none;
-    width: 100%;
-    margin-bottom: var(--space-4);
+    .site-header__close {
+        display: inline-flex;
+
+        align-self: flex-end;
+
+        flex-shrink: 0;
     }
 
 
     /* ----------------------------------------
-       CTA WHEN MENU IS OPEN
+       BACKDROP
        ---------------------------------------- */
 
-    .site-header.is-menu-open .site-header__cta {
-    display: inline-flex;
+    .site-header.is-menu-open::before {
+        content: "";
+
+        position: fixed;
+        inset: 0;
+
+        background-color: rgb(28 28 28 / 0.28);
+
+        z-index: var(--z-content);
+    }
+
 }
+
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .site-header__brand {
+        transition: none;
+    }
 
 }
