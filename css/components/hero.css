@@ -3,12 +3,33 @@
    ======================================== */
 
 .hero {
+    position: relative;
+    min-height: 680px;
     padding-block: var(--space-16);
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgb(250 250 248 / 0.96) 0%,
+            rgb(250 250 248 / 0.90) 38%,
+            rgb(250 250 248 / 0.55) 62%,
+            rgb(250 250 248 / 0.10) 100%
+        ),
+        url("../../assets/images/hero/hero-home.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero__container {
-    display: grid;
-    gap: var(--space-12);
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    min-height: 648px;
 }
 
 .hero__content {
@@ -17,34 +38,28 @@
 
 .hero__eyebrow {
     margin-bottom: var(--space-4);
-
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
     color: var(--color-accent);
 }
 
 .hero__title {
     max-width: 16ch;
-
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-heading);
     letter-spacing: -0.03em;
-
     color: var(--color-text-primary);
 }
 
 .hero__description {
     max-width: 60ch;
     margin-top: var(--space-6);
-
     font-size: var(--font-size-lg);
     line-height: var(--line-height-body);
-
     color: var(--color-text-secondary);
 }
 
@@ -53,7 +68,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: var(--space-6);
-
     margin-top: var(--space-8);
 }
 
@@ -61,17 +75,12 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-
     min-height: 44px;
-
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
-
     color: var(--color-text-primary);
-
     text-decoration: none;
-
     transition:
         color var(--transition-fast) var(--ease-standard);
 }
@@ -83,7 +92,8 @@
 
 .hero__secondary-link span {
     display: inline-block;
-    transition: transform var(--transition-fast) var(--ease-standard);
+    transition:
+        transform var(--transition-fast) var(--ease-standard);
 }
 
 .hero__secondary-link:hover span,
@@ -93,15 +103,69 @@
 
 .hero__meta {
     margin-top: var(--space-6);
-
     font-size: var(--font-size-sm);
     line-height: var(--line-height-ui);
-
     color: var(--color-text-secondary);
 }
 
-.hero__visual {
-    min-height: 320px;
+
+/* ========================================
+   HERO — TABLET
+   ======================================== */
+
+@media (min-width: 768px) {
+
+    .hero {
+        min-height: 700px;
+        background-position: center;
+    }
+
+    .hero__container {
+        min-height: 668px;
+    }
+
 }
 
+
+/* ========================================
+   HERO — DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+
+    .hero {
+        min-height: 720px;
+        background-position: center right;
+    }
+
+    .hero__container {
+        min-height: 688px;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-5xl);
+    }
+
+}
+
+
+/* ========================================
+   HERO — LARGE DESKTOP
+   ======================================== */
+
+@media (min-width: 1280px) {
+
+    .hero {
+        min-height: 760px;
+    }
+
+    .hero__container {
+        min-height: 728px;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-6xl);
+    }
+
+}
 
