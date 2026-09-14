@@ -1,235 +1,83 @@
 <!DOCTYPE html>
 <html lang="es-MX">
+    <head>
+        <!--configuracion basica-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
+        <!-- informacion del sitio -->
 
-    <!-- ========================================
-         CONFIGURACIÓN BÁSICA
-         ======================================== -->
+        <title>Jonathan Bonilla | Desarrollo Web Profesional</title>
+        <meta name="description" content="Desarrollo web profesional para negocios, emprendedores y marcas. Sitios web estratégicos, personalizados y orientados a conversión.">
+        <meta name="author" content="Jonathan Bonilla">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#111111">
+        <link rel="canonical" href="https://www.jonathanbonilla.com/">
 
-    <meta charset="UTF-8">
+        <!-- Favicon -->
+        
+        <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg"/>
+        <link rel="shortcut icon" href="../assets/favicon/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-title" content="Jonathan Bonilla" />
+        <link rel="manifest" href="../assets/favicon/site.webmanifest"/>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
 
-    <!-- ========================================
-         INFORMACIÓN DEL SITIO
-         ======================================== -->
+        <!-- Open Graph / Redes Sociales (Facebook, WhatsApp, LinkedIn) -->
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="es_MX">
+        <meta property="og:site_name" content="Jonathan Bonilla">
+        <meta property="og:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta property="og:description" content="Desarrollo web profesional para negocios, emprendedores y marcas. Sitios web estratégicos, personalizados y orientados a conversión.">
+        <meta property="og:url" content="https://www.jonathanbonilla.com/">
+        <meta property="og:image" content="https://www.jonathanbonilla.com/assets/images/og/jonathan-bonilla-og-1200x630.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:alt" content="Jonathan Bonilla | Desarrollo Web Profesional">
 
-    <title>Proceso | Jonathan Bonilla</title>
 
-    <meta
-        name="description"
-        content="Conoce el proceso de trabajo de Jonathan Bonilla para crear sitios web claros, estratégicos y profesionales."
-    >
+        <!-- Twitter / X Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        <meta name="twitter:description" content="Desarrollo web profesional para negocios, emprendedores y marcas. Sitios web estratégicos, personalizados y orientados a conversión.">
+        <meta name="twitter:image" content="https://www.jonathanbonilla.com/assets/images/og/jonathan-bonilla-og-1200x630.jpg">
+        <meta name="twitter:image:alt" content="Jonathan Bonilla | Desarrollo Web Profesional">
+        
+        <!-- GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Base-->
 
-    <meta
-        name="author"
-        content="Jonathan Bonilla"
-    >
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/base.css">
+        
+        <link rel="stylesheet" href="../css/layout/container.css">
+        <link rel="stylesheet" href="../css/layout/header.css">
+        <link rel="stylesheet" href="../css/layout/navigation.css">
+        <link rel="stylesheet" href="../css/layout/footer.css">
+        <link rel="stylesheet" href="../css/layout/sections.css">
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+        <!-- 2. COMPONENTES REUTILIZABLES -->
 
-    <meta
-        name="theme-color"
-        content="#111111"
-    >
+        <link rel="stylesheet" href="../css/components/buttons.css">
+        <link rel="stylesheet" href="../css/components/accessibility.css">
 
-    <!-- ========================================
-         FAVICON
-         ======================================== -->
 
-    <link
-        rel="icon"
-        type="image/svg+xml"
-        href=""
-    >
+        <link rel="stylesheet" href="../css/pages/process.css">
 
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href=""
-    >
+        <!-- DISEÑOS ADAPTATIVOS-->
+        <link rel="stylesheet" href="../css/responsive.css">
 
-    <link
-        rel="icon"
-        type="image/x-icon"
-        href=""
-    >
+        <!--JAVASCRIPT-->
 
-    <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href=""
-    >
+        <script src="../js/navigation.js" defer></script>
 
-    <!-- ========================================
-         OPEN GRAPH
-         ======================================== -->
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:title"
-        content="Proceso | Jonathan Bonilla"
-    >
-
-    <meta
-        property="og:description"
-        content="Conoce cómo trabajo en cada etapa de un proyecto web."
-    >
-
-    <meta
-        property="og:image"
-        content=""
-    >
-
-    <meta
-        property="og:locale"
-        content="es_MX"
-    >
-
-    <!-- ========================================
-         TWITTER CARD
-         ======================================== -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Proceso | Jonathan Bonilla"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Conoce cómo trabajo en cada etapa de un proyecto web."
-    >
-
-    <meta
-        name="twitter:image"
-        content=""
-    >
-
-    <!-- ========================================
-         GOOGLE FONTS
-         ======================================== -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- ========================================
-         CSS BASE
-         ======================================== -->
-
-    <link
-        rel="stylesheet"
-        href="../css/reset.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/variables.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/base.css"
-    >
-
-    <!-- ========================================
-         LAYOUT
-         ======================================== -->
-
-    <link
-        rel="stylesheet"
-        href="../css/layout/container.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/layout/header.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/layout/navigation.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/layout/footer.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/layout/sections.css"
-    >
-
-    <!-- ========================================
-         COMPONENTES
-         ======================================== -->
-
-    <link
-        rel="stylesheet"
-        href="../css/components/buttons.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/components/accessibility.css"
-    >
-
-    <!-- PROCESO -->
-
-    <link
-        rel="stylesheet"
-        href="../css/pages/process.css"
-    >
-
-    <!-- ========================================
-         RESPONSIVE
-         ======================================== -->
-
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
-
-    <!-- ========================================
-         JAVASCRIPT
-         ======================================== -->
-
-    <script
-        src="../js/navigation.js"
-        defer
-    ></script>
-
-</head>
+    </head>
 
 
 <body>

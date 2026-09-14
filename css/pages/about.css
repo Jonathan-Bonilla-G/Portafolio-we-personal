@@ -1,0 +1,225 @@
+/* ========================================
+   ABOUT — HERO
+   ======================================== */
+
+.about-hero__container {
+    display: grid;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+.about-hero__media {
+    order: 1;
+}
+
+.about-hero__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-surface);
+    border: var(--border-width-sm) solid var(--border-color-subtle);
+}
+
+.about-hero__content {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.about-hero__eyebrow,
+.about-introduction__eyebrow,
+.about-story__eyebrow,
+.about-approach__eyebrow,
+.about-skills__eyebrow,
+.about-values__eyebrow,
+.about-cta__eyebrow {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+}
+
+.about-hero__title {
+    max-width: 12ch;
+    margin: 0;
+}
+
+.about-hero__description {
+    max-width: 55ch;
+    margin: 0;
+    font-size: var(--font-size-lg);
+}
+
+
+/* ========================================
+   ABOUT — INTRODUCTION
+   ======================================== */
+
+.about-introduction__container,
+.about-story__container,
+.about-approach__container {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.about-introduction__intro,
+.about-story__header,
+.about-approach__intro,
+.about-skills__intro,
+.about-values__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.about-introduction__title,
+.about-story__title,
+.about-approach__title,
+.about-skills__title,
+.about-values__title {
+    max-width: 18ch;
+    margin: 0;
+}
+
+.about-introduction__content,
+.about-story__content,
+.about-approach__content {
+    max-width: 65ch;
+}
+
+.about-introduction__content p,
+.about-story__content p,
+.about-approach__content p {
+    margin: 0;
+}
+
+.about-introduction__content p + p,
+.about-story__content p + p,
+.about-approach__content p + p {
+    margin-top: var(--space-6);
+}
+
+
+/* ========================================
+   ABOUT — STORY
+   ======================================== */
+
+.about-story {
+    background-color: var(--color-surface);
+}
+
+
+/* ========================================
+   ABOUT — APPROACH
+   ======================================== */
+
+.about-approach__content {
+    max-width: 65ch;
+}
+
+.about-approach__content p:first-child {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+}
+
+
+/* ========================================
+   ABOUT — SKILLS
+   ======================================== */
+
+.about-skills {
+    background-color: var(--color-surface);
+}
+
+.about-skills__container,
+.about-values__container {
+    display: grid;
+    gap: var(--space-10);
+}
+
+.about-skills__list,
+.about-values__list {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.about-skill,
+.about-value {
+    padding-block: var(--space-6);
+    border-top: var(--border-width-sm) solid var(--border-color-subtle);
+}
+
+.about-skill__title,
+.about-value__title {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-2xl);
+}
+
+.about-skill__description,
+.about-value__description {
+    max-width: 45ch;
+    margin: 0;
+}
+
+
+/* ========================================
+   ABOUT — CTA
+   ======================================== */
+
+.about-cta {
+    background-color: var(--color-dark);
+}
+
+.about-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.about-cta__title {
+    max-width: 18ch;
+    margin: 0;
+    color: var(--color-background);
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (min-width: 768px) {
+
+    .about-hero__container {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: var(--space-16);
+    }
+
+    .about-introduction__container,
+    .about-story__container,
+    .about-approach__container {
+        grid-template-columns:
+            minmax(0, 0.8fr)
+            minmax(0, 1.2fr);
+
+        gap: var(--space-16);
+    }
+
+    .about-skills__list {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .about-values__list {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
