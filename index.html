@@ -421,8 +421,6 @@
 
             </section>
 
-            <!-- PROYECTOS -->
-
             <section class="projects" aria-labelledby="projects-title">
 
                 <div class="container projects__container">
@@ -448,13 +446,27 @@
 
                     <div class="projects__list">
 
-                        <!-- PROYECTO 01 -->
+                        <!-- ========================================
+                            PROYECTO 01 — REAL
+                            ======================================== -->
 
                         <article class="project-card">
 
-                            <div class="project-card__media">
-                                <!-- Imagen / mockup del proyecto -->
-                            </div>
+                            <a
+                                class="project-card__media"
+                                href="pages/project-photographer.html"
+                                aria-label="Ver caso de estudio de Portafolio Photographer"
+                            >
+                                <img
+                                    class="project-card__image"
+                                    src="assets/images/mockup/photographer-mockup.webp"
+                                    alt="Mockup del sitio web Portafolio Photographer"
+                                    width="1536"
+                                    height="1024"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </a>
 
                             <div class="project-card__content">
 
@@ -478,6 +490,7 @@
                                     aria-label="Ver caso de estudio de Portafolio Photographer"
                                 >
                                     Ver caso de estudio
+                                    <span aria-hidden="true">→</span>
                                 </a>
 
                             </div>
@@ -485,12 +498,27 @@
                         </article>
 
 
-                        <!-- PROYECTO 02 -->
+                        <!-- ========================================
+                            PROYECTO 02 — EN DESARROLLO
+                            ======================================== -->
 
-                        <article class="project-card">
+                        <article class="project-card project-card--placeholder">
 
-                            <div class="project-card__media">
-                                <!-- Imagen / mockup del proyecto -->
+                            <div
+                                class="project-card__media project-card__media--placeholder"
+                                aria-hidden="true"
+                            >
+                                <div class="project-card__placeholder-content">
+
+                                    <span class="project-card__placeholder-icon">
+                                        +
+                                    </span>
+
+                                    <span class="project-card__placeholder-label">
+                                        Proyecto en desarrollo
+                                    </span>
+
+                                </div>
                             </div>
 
                             <div class="project-card__content">
@@ -509,25 +537,36 @@
                                     que nuevos clientes conozcan sus servicios.
                                 </p>
 
-                                <a
-                                    class="project-card__link"
-                                    href="pages/projects.html"
-                                    aria-label="Ver caso de estudio de Barbería Local"
-                                >
-                                    Ver caso de estudio
-                                </a>
+                                <span class="project-card__link project-card__link--disabled">
+                                    Caso de estudio próximamente
+                                </span>
 
                             </div>
 
                         </article>
 
 
-                        <!-- PROYECTO 03 -->
+                        <!-- ========================================
+                            PROYECTO 03 — EN DESARROLLO
+                            ======================================== -->
 
-                        <article class="project-card">
+                        <article class="project-card project-card--placeholder">
 
-                            <div class="project-card__media">
-                                <!-- Imagen / mockup del proyecto -->
+                            <div
+                                class="project-card__media project-card__media--placeholder"
+                                aria-hidden="true"
+                            >
+                                <div class="project-card__placeholder-content">
+
+                                    <span class="project-card__placeholder-icon">
+                                        +
+                                    </span>
+
+                                    <span class="project-card__placeholder-label">
+                                        Proyecto en desarrollo
+                                    </span>
+
+                                </div>
                             </div>
 
                             <div class="project-card__content">
@@ -546,13 +585,9 @@
                                     cuidada y una experiencia orientada a conversión.
                                 </p>
 
-                                <a
-                                    class="project-card__link"
-                                    href="pages/projects.html"
-                                    aria-label="Ver caso de estudio de Hotel Boutique"
-                                >
-                                    Ver caso de estudio
-                                </a>
+                                <span class="project-card__link project-card__link--disabled">
+                                    Caso de estudio próximamente
+                                </span>
 
                             </div>
 
@@ -568,6 +603,7 @@
                             href="pages/projects.html"
                         >
                             Ver todos los proyectos
+                            <span aria-hidden="true">→</span>
                         </a>
 
                     </div>
@@ -575,7 +611,6 @@
                 </div>
 
             </section>
-
             <!-- SERVICIOS -->
 
             <section class="services" aria-labelledby="services-title">
