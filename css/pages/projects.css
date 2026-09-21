@@ -242,47 +242,74 @@
    PROJECTS CTA
    ======================================== */
 
+/* SECTION */
+
 .projects-cta {
-    background-color: var(--color-dark);
+    padding-block: var(--space-20);
+    background-color: var(--color-background);
 }
 
 .projects-cta__container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    display: grid;
+    justify-items: center;
+
+    background-color: var(--color-dark);
+    padding: var(--space-16) var(--space-8);
+
+    border-radius: var(--radius-xl);
+    border: var(--border-width-sm) solid var(--color-dark-surface);
 }
 
 .projects-cta__content {
-    width: 100%;
-    max-width: 720px;
+    max-width: 760px;
+    text-align: center;
 }
 
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
 .projects-cta__eyebrow {
-    margin-block-end: var(--space-4);
+    margin-bottom: var(--space-4);
+
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
-    color: var(--color-accent);
+
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+
+    color: var(--color-accent);
 }
 
 .projects-cta__title {
-    margin: 0;
-    color: var(--color-background);
+    max-width: 22ch;
+    margin-inline: auto;
+
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+
+    letter-spacing: -0.03em;
+
+    color: var(--color-surface);
 }
 
 .projects-cta__description {
-    max-width: 55ch;
-    margin-block-start: var(--space-5);
+    max-width: 60ch;
+    margin-top: var(--space-6);
     margin-inline: auto;
-    color: var(--color-background);
+
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+
+    color: var(--color-border);
 }
 
-.projects-cta .button {
-    margin-block-start: var(--space-6);
+.projects-cta__button {
+    margin-top: var(--space-8);
 }
-
 
 /* ========================================
    RESPONSIVE — SMALL MOBILE
