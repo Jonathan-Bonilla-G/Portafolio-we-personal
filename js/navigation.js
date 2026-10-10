@@ -2,6 +2,7 @@
    NAVIGATION
    ======================================== */
 
+document.addEventListener('DOMContentLoaded', () => {
 
     // --------------------------------------------------
     // 1. ELEMENTOS DOM
@@ -835,3 +836,5 @@
             passive: true
         }
     );
+
+});
