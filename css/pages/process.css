@@ -301,79 +301,6 @@
 
 
 /* ========================================
-   PROCESS CTA
-   ======================================== */
-
-/* SECTION */
-
-.process-cta {
-    padding-block: var(--space-20);
-    background-color: var(--color-background);
-}
-
-.process-cta__container {
-    display: grid;
-    justify-items: center;
-
-    background-color: var(--color-dark);
-    padding: var(--space-16) var(--space-8);
-
-    border-radius: var(--radius-xl);
-    border: var(--border-width-sm) solid var(--color-dark-surface);
-}
-
-.process-cta__content {
-    max-width: 760px;
-    text-align: center;
-}
-
-
-/* ========================================
-   CONTENT
-   ======================================== */
-
-.process-cta__eyebrow {
-    margin-bottom: var(--space-4);
-
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-
-    color: var(--color-accent);
-}
-
-.process-cta__title {
-    max-width: 22ch;
-    margin-inline: auto;
-
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-heading);
-
-    letter-spacing: -0.03em;
-
-    color: var(--color-surface);
-}
-
-.process-cta__description {
-    max-width: 60ch;
-    margin-top: var(--space-6);
-    margin-inline: auto;
-
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-body);
-
-    color: var(--color-border);
-}
-
-.process-cta__button {
-    margin-top: var(--space-8);
-}
-
-/* ========================================
    RESPONSIVE
    ======================================== */
 
@@ -457,7 +384,4 @@
         font-size: clamp(2.75rem, 12vw, 3.75rem);
     }
 
-    .process-cta__title {
-        font-size: clamp(3rem, 13vw, 4.5rem);
-    }
 }

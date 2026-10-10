@@ -122,6 +122,31 @@
     padding-top: 72px;
 }
 
+/* ========================================
+   NAVIGATION BACKDROP
+   ======================================== */
+
+/* ========================================
+   MEGA MENU / MOBILE BACKDROP
+   ======================================== */
+
+.site-header.is-menu-open::before {
+    content: "";
+
+    position: fixed;
+
+    inset-inline: 0;
+    inset-block-start: 72px;
+    inset-block-end: 0;
+
+    background-color:
+        rgb(28 28 28 / 0.28);
+
+    z-index: var(--z-content);
+
+    pointer-events: auto;
+}
+
 
 /* ========================================
    MOBILE
@@ -183,21 +208,9 @@
         flex-shrink: 0;
     }
 
-
-    /* ----------------------------------------
-       BACKDROP
-       ---------------------------------------- */
-
     .site-header.is-menu-open::before {
-        content: "";
-
-        position: fixed;
-        inset: 0;
-
-        background-color: rgb(28 28 28 / 0.28);
-
-        z-index: var(--z-content);
-    }
+    inset-block-start: 64px;
+}
 
 }
 

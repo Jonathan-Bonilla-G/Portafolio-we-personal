@@ -1,19 +1,59 @@
 /* ========================================
-   MOBILE NAVIGATION
+   NAVIGATION
    ======================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
 
     // --------------------------------------------------
-    // 1. SELECCIÓN DE ELEMENTOS DOM
+    // 1. ELEMENTOS DOM
     // --------------------------------------------------
 
     const header = document.querySelector('.site-header');
-    const menuToggle = document.querySelector('.site-header__menu-toggle');
-    const navigation = document.querySelector('#site-navigation');
-    const closeButton = document.querySelector('.site-header__close');
 
-    // Guardia de seguridad básica
+    const menuToggle = document.querySelector(
+        '.site-header__menu-toggle'
+    );
+
+    const navigation = document.querySelector(
+        '#site-navigation'
+    );
+
+    const closeButton = document.querySelector(
+        '.site-header__close'
+    );
+
+    // --------------------------------------------------
+    // MEGA MENÚ — SERVICIOS
+    // --------------------------------------------------
+
+    const servicesItem = navigation?.querySelector(
+        '.site-navigation__item--mega-menu'
+    );
+
+    const servicesTrigger = servicesItem?.querySelector(
+        '.site-navigation__mega-trigger'
+    );
+
+    const servicesMegaMenu = servicesItem?.querySelector(
+        '.site-navigation__mega-menu'
+    );
+
+    const projectsItem = navigation?.querySelector(
+        '.site-navigation__item--projects-menu'
+    );
+
+    const projectsTrigger = projectsItem?.querySelector(
+        '.site-navigation__mega-trigger'
+    );
+
+    const projectsMegaMenu = projectsItem?.querySelector(
+        '.site-navigation__mega-menu'
+    );
+
+
+    // --------------------------------------------------
+    // GUARD
+    // --------------------------------------------------
+
     if (
         !header ||
         !menuToggle ||
@@ -23,17 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const navigationLinks = navigation.querySelectorAll(
-        '.site-navigation__link'
-    );
-
 
     // --------------------------------------------------
-    // 2. MEDIA QUERY — DESKTOP
+    // 2. MEDIA QUERY
     // --------------------------------------------------
-    // Debe coincidir con el breakpoint del CSS.
-    // Mobile: < 768px
-    // Desktop: >= 768px
 
     const desktopMediaQuery = window.matchMedia(
         '(min-width: 768px)'
@@ -41,25 +74,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 3. ELEMENTOS FOCUSABLES DEL MENÚ
+    // 3. ELEMENTOS FOCUSABLES
     // --------------------------------------------------
 
     const getFocusableElements = () => {
 
-        return navigation.querySelectorAll(
-            'a[href], ' +
-            'button:not([disabled]), ' +
-            'input:not([disabled]), ' +
-            'select:not([disabled]), ' +
-            'textarea:not([disabled]), ' +
-            '[tabindex]:not([tabindex="-1"])'
-        );
+        return Array.from(
+            navigation.querySelectorAll(
+                [
+                    'a[href]',
+                    'button:not([disabled])',
+                    'input:not([disabled])',
+                    'select:not([disabled])',
+                    'textarea:not([disabled])',
+                    '[tabindex]:not([tabindex="-1"])'
+                ].join(',')
+            )
+        ).filter((element) => {
+
+            return (
+                !element.hasAttribute('hidden') &&
+                !element.closest('[inert]')
+            );
+
+        });
 
     };
 
 
     // --------------------------------------------------
-    // 4. SINCRONIZAR ACCESIBILIDAD
+    // 4. ACCESSIBILITY — MENÚ PRINCIPAL
     // --------------------------------------------------
 
     const syncAccessibilityState = (isOpen) => {
@@ -73,123 +117,266 @@ document.addEventListener('DOMContentLoaded', () => {
 
             navigation.inert = false;
 
-        } else {
-
-            navigation.setAttribute(
-                'aria-hidden',
-                String(!isOpen)
-            );
-
-            navigation.inert = !isOpen;
-
+            return;
         }
+
+
+        navigation.setAttribute(
+            'aria-hidden',
+            String(!isOpen)
+        );
+
+        navigation.inert = !isOpen;
 
     };
 
 
     // --------------------------------------------------
-    // 5. CONTROL DEL ESTADO DEL MENÚ
+    // 5. HEADER STATE
+    // --------------------------------------------------
+
+    const syncHeaderMenuState = () => {
+
+        const mobileMenuOpen =
+            navigation.classList.contains(
+                'is-open'
+            );
+
+        const megaMenuOpen =
+            desktopMediaQuery.matches &&
+            (servicesItem?.classList.contains('is-open') ||
+                projectsItem?.classList.contains('is-open'));
+
+
+        header.classList.toggle(
+            'is-menu-open',
+            mobileMenuOpen || megaMenuOpen
+        );
+
+    };
+
+
+    // --------------------------------------------------
+    // 6. MEGA MENÚ — SERVICIOS
+    // --------------------------------------------------
+
+    const setServicesMegaMenuState = (isOpen) => {
+
+        if (
+            !servicesItem ||
+            !servicesTrigger ||
+            !servicesMegaMenu
+        ) {
+            return;
+        }
+
+
+        const shouldOpen = Boolean(isOpen);
+
+
+        // ----------------------------------------------
+        // ESTADO VISUAL
+        // ----------------------------------------------
+
+        servicesItem.classList.toggle(
+            'is-open',
+            shouldOpen
+        );
+
+
+        // ----------------------------------------------
+        // ARIA
+        // ----------------------------------------------
+
+        servicesTrigger.setAttribute(
+            'aria-expanded',
+            String(shouldOpen)
+        );
+
+
+        servicesMegaMenu.setAttribute(
+            'aria-hidden',
+            String(!shouldOpen)
+        );
+
+
+        // ----------------------------------------------
+        // INERT
+        // ----------------------------------------------
+
+        servicesMegaMenu.inert = !shouldOpen;
+
+
+        // ----------------------------------------------
+        // HEADER
+        // ----------------------------------------------
+
+        syncHeaderMenuState();
+
+    };
+
+    const setProjectsMegaMenuState = (isOpen) => {
+        if (!projectsItem || !projectsTrigger || !projectsMegaMenu) return;
+        const shouldOpen = Boolean(isOpen);
+        projectsItem.classList.toggle('is-open', shouldOpen);
+        projectsTrigger.setAttribute('aria-expanded', String(shouldOpen));
+        projectsMegaMenu.setAttribute('aria-hidden', String(!shouldOpen));
+        projectsMegaMenu.inert = !shouldOpen;
+        syncHeaderMenuState();
+    };
+
+    const closeMegaMenus = () => {
+        setServicesMegaMenuState(false);
+        setProjectsMegaMenuState(false);
+    };
+
+
+    // --------------------------------------------------
+    // 7. MENÚ PRINCIPAL
     // --------------------------------------------------
 
     const setMenuState = (forceState) => {
 
-        const isOpen =
+        const currentState =
+            navigation.classList.contains(
+                'is-open'
+            );
+
+
+        const shouldOpen =
             typeof forceState === 'boolean'
                 ? forceState
-                : !navigation.classList.contains('is-open');
+                : !currentState;
 
 
-        // ------------------------------------------
-        // ESTADO VISUAL
-        // ------------------------------------------
+        // ----------------------------------------------
+        // DESKTOP
+        // ----------------------------------------------
+
+        if (desktopMediaQuery.matches) {
+
+            navigation.classList.remove(
+                'is-open'
+            );
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+            menuToggle.setAttribute(
+                'aria-label',
+                'Abrir menú de navegación'
+            );
+
+            syncAccessibilityState(false);
+
+            document.body.style.overflow = '';
+
+            syncHeaderMenuState();
+
+            return;
+        }
+
+
+        // ----------------------------------------------
+        // MOBILE — ESTADO VISUAL
+        // ----------------------------------------------
 
         navigation.classList.toggle(
             'is-open',
-            isOpen
-        );
-
-        header.classList.toggle(
-            'is-menu-open',
-            isOpen
+            shouldOpen
         );
 
 
-        // ------------------------------------------
-        // BOTÓN HAMBURGUESA
-        // ------------------------------------------
+        // ----------------------------------------------
+        // MOBILE — ARIA
+        // ----------------------------------------------
 
         menuToggle.setAttribute(
             'aria-expanded',
-            String(isOpen)
+            String(shouldOpen)
         );
 
         menuToggle.setAttribute(
             'aria-label',
-            isOpen
+            shouldOpen
                 ? 'Cerrar menú de navegación'
                 : 'Abrir menú de navegación'
         );
 
 
-        // ------------------------------------------
-        // ACCESIBILIDAD
-        // ------------------------------------------
+        // ----------------------------------------------
+        // ACCESSIBILITY
+        // ----------------------------------------------
 
-        syncAccessibilityState(isOpen);
+        syncAccessibilityState(
+            shouldOpen
+        );
 
 
-        // ------------------------------------------
-        // BLOQUEO DE SCROLL
-        // ------------------------------------------
+        // ----------------------------------------------
+        // MEGA MENÚ
+        // ----------------------------------------------
+
+        if (!shouldOpen) {
+
+            closeMegaMenus();
+
+        }
+
+
+        // ----------------------------------------------
+        // BODY SCROLL
+        // ----------------------------------------------
 
         document.body.style.overflow =
-            isOpen && !desktopMediaQuery.matches
+            shouldOpen
                 ? 'hidden'
                 : '';
 
 
-        // ------------------------------------------
-        // GESTIÓN DEL FOCO
-        // ------------------------------------------
+        // ----------------------------------------------
+        // HEADER
+        // ----------------------------------------------
 
-        if (
-            isOpen &&
-            !desktopMediaQuery.matches
-        ) {
+        syncHeaderMenuState();
 
-            requestAnimationFrame(() => {
+
+        // ----------------------------------------------
+        // FOCUS
+        // ----------------------------------------------
+
+        requestAnimationFrame(() => {
+
+            if (shouldOpen) {
 
                 closeButton.focus();
 
-            });
-
-        } else if (
-            !isOpen &&
-            !desktopMediaQuery.matches
-        ) {
-
-            requestAnimationFrame(() => {
+            } else {
 
                 menuToggle.focus();
 
-            });
+            }
 
-        }
+        });
 
     };
 
 
     // --------------------------------------------------
-    // 6. ESTADO DEL HEADER AL HACER SCROLL
+    // 8. HEADER SCROLL
     // --------------------------------------------------
 
     let isScrollTicking = false;
+
 
     const handleScroll = () => {
 
         if (isScrollTicking) {
             return;
         }
+
 
         window.requestAnimationFrame(() => {
 
@@ -202,27 +389,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
 
+
         isScrollTicking = true;
 
     };
 
 
     // --------------------------------------------------
-    // 7. ABRIR MENÚ
+    // 9. BOTÓN HAMBURGUESA
     // --------------------------------------------------
 
     menuToggle.addEventListener(
         'click',
         () => {
 
-            setMenuState(true);
+            setMenuState();
 
         }
     );
 
 
     // --------------------------------------------------
-    // 8. CERRAR MENÚ
+    // 10. BOTÓN CERRAR
     // --------------------------------------------------
 
     closeButton.addEventListener(
@@ -236,44 +424,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 9. CERRAR AL HACER CLICK FUERA
+    // 11. TRIGGER — SERVICIOS
     // --------------------------------------------------
 
-    document.addEventListener(
-        'click',
-        (event) => {
+    if (servicesTrigger) {
 
-            if (
-                !navigation.classList.contains('is-open') ||
-                desktopMediaQuery.matches
-            ) {
-                return;
-            }
+        servicesTrigger.addEventListener(
+            'click',
+            () => {
 
+                setProjectsMegaMenuState(false);
 
-            const clickedInsideNavigation =
-                navigation.contains(event.target);
-
-            const clickedMenuToggle =
-                menuToggle.contains(event.target);
+                const isOpen =
+                    servicesItem.classList.contains(
+                        'is-open'
+                    );
 
 
-            if (
-                !clickedInsideNavigation &&
-                !clickedMenuToggle
-            ) {
-
-                setMenuState(false);
+                setServicesMegaMenuState(
+                    !isOpen
+                );
 
             }
+        );
 
-        }
-    );
+    }
+
+    if (projectsTrigger) {
+        projectsTrigger.addEventListener('click', () => {
+            const isOpen = projectsItem.classList.contains('is-open');
+            setServicesMegaMenuState(false);
+            setProjectsMegaMenuState(!isOpen);
+        });
+    }
 
 
     // --------------------------------------------------
-    // 10. CERRAR AL HACER CLICK EN UN ENLACE
+    // 12. ENLACES PRINCIPALES
     // --------------------------------------------------
+
+    const navigationLinks =
+        navigation.querySelectorAll(
+            'a.site-navigation__link'
+        );
+
 
     navigationLinks.forEach((link) => {
 
@@ -281,7 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'click',
             () => {
 
-                if (!desktopMediaQuery.matches) {
+                if (
+                    !desktopMediaQuery.matches
+                ) {
 
                     setMenuState(false);
 
@@ -294,7 +490,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 11. TECLADO — ESCAPE
+    // 13. ENLACES DEL MEGA MENÚ
+    // --------------------------------------------------
+
+    const megaMenuLinks = navigation.querySelectorAll(
+        '.site-navigation__mega-menu a'
+    );
+
+
+    megaMenuLinks.forEach((link) => {
+
+        link.addEventListener(
+            'click',
+            () => {
+
+                if (
+                    !desktopMediaQuery.matches
+                ) {
+
+                    setMenuState(false);
+
+                }
+
+            }
+        );
+
+    });
+
+
+    // --------------------------------------------------
+    // 14. CLICK FUERA
+    // --------------------------------------------------
+
+    document.addEventListener(
+        'click',
+        (event) => {
+
+            const target = event.target;
+
+
+            // ------------------------------------------
+            // DESKTOP — MEGA MENÚ
+            // ------------------------------------------
+
+            if (
+                desktopMediaQuery.matches &&
+                servicesItem?.classList.contains(
+                    'is-open'
+                ) &&
+                !servicesItem.contains(target)
+            ) {
+
+                setServicesMegaMenuState(false);
+
+            }
+
+            if (
+                desktopMediaQuery.matches &&
+                projectsItem?.classList.contains('is-open') &&
+                !projectsItem.contains(target)
+            ) {
+                setProjectsMegaMenuState(false);
+            }
+
+
+            // ------------------------------------------
+            // MOBILE — MENÚ PRINCIPAL
+            // ------------------------------------------
+
+            if (
+                !desktopMediaQuery.matches &&
+                navigation.classList.contains(
+                    'is-open'
+                ) &&
+                !navigation.contains(target) &&
+                !menuToggle.contains(target)
+            ) {
+
+                setMenuState(false);
+
+            }
+
+        }
+    );
+
+
+    // --------------------------------------------------
+    // 15. ESCAPE
     // --------------------------------------------------
 
     document.addEventListener(
@@ -302,8 +584,50 @@ document.addEventListener('DOMContentLoaded', () => {
         (event) => {
 
             if (
-                event.key === 'Escape' &&
-                navigation.classList.contains('is-open') &&
+                event.key !== 'Escape'
+            ) {
+                return;
+            }
+
+
+            // ------------------------------------------
+            // PRIMERO — MEGA MENÚ
+            // ------------------------------------------
+
+            if (
+                servicesItem?.classList.contains(
+                    'is-open'
+                )
+            ) {
+
+                event.preventDefault();
+
+                setServicesMegaMenuState(
+                    false
+                );
+
+                servicesTrigger?.focus();
+
+                return;
+
+            }
+
+            if (projectsItem?.classList.contains('is-open')) {
+                event.preventDefault();
+                setProjectsMegaMenuState(false);
+                projectsTrigger?.focus();
+                return;
+            }
+
+
+            // ------------------------------------------
+            // SEGUNDO — MENÚ MOBILE
+            // ------------------------------------------
+
+            if (
+                navigation.classList.contains(
+                    'is-open'
+                ) &&
                 !desktopMediaQuery.matches
             ) {
 
@@ -318,29 +642,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 12. FOCUS TRAP
+    // 16. FOCUS TRAP — MOBILE
     // --------------------------------------------------
 
-    document.addEventListener(
+    navigation.addEventListener(
         'keydown',
         (event) => {
 
             if (
                 event.key !== 'Tab' ||
-                !navigation.classList.contains('is-open') ||
-                desktopMediaQuery.matches
+                desktopMediaQuery.matches ||
+                !navigation.classList.contains(
+                    'is-open'
+                )
             ) {
                 return;
             }
 
 
             const menuFocusables =
-                Array.from(
-                    getFocusableElements()
-                );
+                getFocusableElements();
 
 
-            if (!menuFocusables.length) {
+            if (
+                !menuFocusables.length
+            ) {
                 return;
             }
 
@@ -354,14 +680,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ];
 
 
-            // --------------------------------------
+            // ------------------------------------------
             // TAB
             // Último → Primero
-            // --------------------------------------
+            // ------------------------------------------
 
             if (
                 !event.shiftKey &&
-                document.activeElement === lastFocusable
+                document.activeElement ===
+                    lastFocusable
             ) {
 
                 event.preventDefault();
@@ -373,14 +700,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
 
-            // --------------------------------------
+            // ------------------------------------------
             // SHIFT + TAB
             // Primero → Último
-            // --------------------------------------
+            // ------------------------------------------
 
             if (
                 event.shiftKey &&
-                document.activeElement === firstFocusable
+                document.activeElement ===
+                    firstFocusable
             ) {
 
                 event.preventDefault();
@@ -394,60 +722,110 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --------------------------------------------------
-    // 13. CAMBIO MOBILE ↔ DESKTOP
+    // 17. CAMBIO MOBILE ↔ DESKTOP
     // --------------------------------------------------
 
-    desktopMediaQuery.addEventListener(
-        'change',
-        () => {
+    const handleMediaQueryChange = () => {
 
-            // ------------------------------------------
-            // REINICIAR ESTADO DEL MENÚ
-            // ------------------------------------------
+        // ------------------------------------------
+        // CERRAR MENÚ PRINCIPAL
+        // ------------------------------------------
 
-            navigation.classList.remove(
-                'is-open'
-            );
-
-            header.classList.remove(
-                'is-menu-open'
-            );
+        navigation.classList.remove(
+            'is-open'
+        );
 
 
-            // ------------------------------------------
-            // BOTÓN HAMBURGUESA
-            // ------------------------------------------
+        // ------------------------------------------
+        // CERRAR MEGA MENÚ
+        // ------------------------------------------
 
-            menuToggle.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-            menuToggle.setAttribute(
-                'aria-label',
-                'Abrir menú de navegación'
-            );
+        closeMegaMenus();
 
 
-            // ------------------------------------------
-            // ACCESIBILIDAD
-            // ------------------------------------------
+        // ------------------------------------------
+        // HAMBURGUESA
+        // ------------------------------------------
 
-            syncAccessibilityState(false);
+        menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+        menuToggle.setAttribute(
+            'aria-label',
+            'Abrir menú de navegación'
+        );
 
 
-            // ------------------------------------------
-            // SCROLL
-            // ------------------------------------------
+        // ------------------------------------------
+        // ACCESSIBILITY
+        // ------------------------------------------
 
-            document.body.style.overflow = '';
+        syncAccessibilityState(false);
 
-        }
+
+        // ------------------------------------------
+        // BODY
+        // ------------------------------------------
+
+        document.body.style.overflow = '';
+
+
+        // ------------------------------------------
+        // HEADER
+        // ------------------------------------------
+
+        syncHeaderMenuState();
+
+    };
+
+
+    if (typeof desktopMediaQuery.addEventListener === 'function') {
+        desktopMediaQuery.addEventListener(
+            'change',
+            handleMediaQueryChange
+        );
+    } else {
+        desktopMediaQuery.addListener(
+            handleMediaQueryChange
+        );
+    }
+
+
+    // --------------------------------------------------
+    // 18. ESTADO INICIAL
+    // --------------------------------------------------
+
+    navigation.classList.remove(
+        'is-open'
     );
 
 
+    menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+    );
+
+
+    menuToggle.setAttribute(
+        'aria-label',
+        'Abrir menú de navegación'
+    );
+
+
+    closeMegaMenus();
+
+
+    syncAccessibilityState(false);
+
+    syncHeaderMenuState();
+
+    handleScroll();
+
+
     // --------------------------------------------------
-    // 14. LISTENER DE SCROLL
+    // 19. SCROLL
     // --------------------------------------------------
 
     window.addEventListener(
@@ -457,29 +835,3 @@ document.addEventListener('DOMContentLoaded', () => {
             passive: true
         }
     );
-
-
-    // --------------------------------------------------
-    // 15. ESTADO INICIAL
-    // --------------------------------------------------
-
-    menuToggle.setAttribute(
-        'aria-expanded',
-        'false'
-    );
-
-    menuToggle.setAttribute(
-        'aria-label',
-        'Abrir menú de navegación'
-    );
-
-    syncAccessibilityState(false);
-
-
-    // --------------------------------------------------
-    // 16. ESTADO INICIAL DEL HEADER
-    // --------------------------------------------------
-
-    handleScroll();
-
-});
