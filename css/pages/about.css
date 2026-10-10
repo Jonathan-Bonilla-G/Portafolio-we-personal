@@ -2,55 +2,271 @@
    ABOUT — HERO
    ======================================== */
 
+.about-hero {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+}
+
 .about-hero__container {
-    display: grid;
-    gap: var(--space-10);
+    display: block;            /* quita el grid que lo puede encoger */
+    width: min(100% - 2rem, 1200px);
+    max-width: none;
+    margin-inline: auto;}
+
+
+/* ========================================
+   VISUAL COMPOSITION
+   ======================================== */
+
+.about-hero__media {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    max-width: 1100px;
+    min-height: 600px;
+
+    margin-inline: auto;
+    padding-block: var(--space-8);
+
+    display: flex;
     align-items: center;
 }
 
-.about-hero__media {
-    order: 1;
-}
+
+/* ========================================
+   CIRCULAR PHOTOGRAPH
+   ======================================== */
 
 .about-hero__image {
+    position: relative;
+    z-index: 1;
+
+    width: clamp(380px, 43vw, 530px);
+    flex-shrink: 0;
+
+    aspect-ratio: 1 / 1;
+
+    margin-left: 5%;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface);
+}
+
+.about-hero__image img {
+    display: block;
+
     width: 100%;
-    aspect-ratio: 4 / 5;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: inherit;
+}
+
+
+/* ========================================
+   COPPER GEOMETRIC SHAPE
+   ======================================== */
+
+.about-hero__shape {
+    position: absolute;
+    z-index: 2;
+
+    left: 3%;
+    bottom: 6%;
+
+    width: clamp(130px, 16vw, 190px);
+    aspect-ratio: 1 / 1;
+
+    border: 20px solid var(--color-accent);
+    border-radius: var(--radius-full);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   FLOATING CONTENT CARD
+   ======================================== */
+
+.about-hero__card {
+    position: absolute;
+    z-index: 3;
+
+    right: 0;
+    bottom: 10%;
+
+    width: min(52%, 560px);
+    padding: var(--space-8);
+
     background-color: var(--color-surface);
     border: var(--border-width-sm) solid var(--border-color-subtle);
+    box-shadow: var(--shadow-md);
 }
 
-.about-hero__content {
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-6);
-}
 
-.about-hero__eyebrow,
-.about-introduction__eyebrow,
-.about-story__eyebrow,
-.about-approach__eyebrow,
-.about-skills__eyebrow,
-.about-values__eyebrow {
-    margin: 0;
+/* ========================================
+   EYEBROW
+   ======================================== */
+
+.about-hero__eyebrow {
+    margin: 0 0 var(--space-5);
+
     color: var(--color-accent);
+
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
+
     line-height: var(--line-height-ui);
 }
 
+
+/* ========================================
+   MAIN TITLE
+   ======================================== */
+
 .about-hero__title {
-    max-width: 12ch;
+    max-width: 18ch;
     margin: 0;
+
+    color: var(--color-text-primary);
+
+    font-size: clamp(1.75rem, 2.8vw, 2.75rem);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-semibold);
+
+    overflow-wrap: normal;
+    word-break: normal;
 }
+
+
+/* ========================================
+   DESCRIPTION
+   ======================================== */
 
 .about-hero__description {
     max-width: 55ch;
-    margin: 0;
+
+    margin: var(--space-5) 0 0;
+
+    color: var(--color-text-secondary);
+
     font-size: var(--font-size-lg);
+
+    line-height: var(--line-height-body);
 }
 
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .about-hero__media {
+        min-height: 500px;
+    }
+
+    .about-hero__image {
+        width: clamp(340px, 46vw, 440px);
+        margin-left: 2%;
+    }
+
+    .about-hero__card {
+        right: 0;
+        bottom: 8%;
+        width: 54%;
+        padding: var(--space-6);
+    }
+
+    .about-hero__title {
+        font-size: clamp(1.625rem, 3.4vw, 2.25rem);
+    }
+
+
+    .about-hero__description {
+        font-size: var(--font-size-md);
+    }
+
+    .about-hero__shape {
+        left: 0;
+        bottom: 5%;
+
+        width: 145px;
+        border-width: 16px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .about-hero__media {
+        min-height: auto;
+
+        padding-block: var(--space-8);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-hero__image {
+        width: min(100%, 380px);
+
+        margin-left: 0;
+    }
+
+    .about-hero__shape {
+        left: 0;
+        top: 245px;
+        bottom: auto;
+
+        width: clamp(110px, 30vw, 140px);
+
+        border-width: 15px;
+    }
+
+    .about-hero__card {
+        position: relative;
+        z-index: 3;
+
+        right: auto;
+        bottom: auto;
+
+        width: calc(100% - var(--space-4));
+        max-width: 480px;
+
+        margin-top: calc(var(--space-10) * -1);
+
+        padding: var(--space-6);
+    }
+
+    .about-hero__eyebrow {
+        margin-bottom: var(--space-4);
+    }
+
+    .about-hero__title {
+        max-width: 18ch;
+
+        font-size: clamp(2rem, 8vw, 2.75rem);
+    }
+
+    .about-hero__description {
+        margin-top: var(--space-4);
+
+        font-size: var(--font-size-md);
+    }
+}
 
 /* ========================================
    ABOUT — INTRODUCTION
@@ -171,13 +387,7 @@
 
 @media (min-width: 768px) {
 
-    .about-hero__container {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        gap: var(--space-16);
-    }
+    
 
     .about-introduction__container,
     .about-story__container,
