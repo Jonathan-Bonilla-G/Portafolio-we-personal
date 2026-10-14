@@ -1,8 +1,6 @@
 /* ========================================
-   PROCESS
+   PROCESS (Estilo Tarjetas con Fondo de Acento)
    ======================================== */
-
-/* SECTION */
 
 .process {
     padding-block: var(--space-16);
@@ -52,54 +50,94 @@
 
 
 /* ========================================
-   PROCESS LIST
+   PROCESS LIST (Grid de Tarjetas)
    ======================================== */
 
 .process__list {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .process__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .process__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 
 /* ========================================
-   PROCESS STEP
+   PROCESS STEP CARD
    ======================================== */
 
 .process-step {
-    display: grid;
-    gap: var(--space-4);
-    padding-block: var(--space-8);
-    border-top: var(--border-width-sm) solid var(--color-border);
+    list-style: none;
 }
 
-.process-step:last-child {
-    border-bottom: var(--border-width-sm) solid var(--color-border);
+.process-step__card {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    transition: transform var(--transition-base) var(--ease-standard),
+                box-shadow var(--transition-base) var(--ease-standard);
 }
 
-.process-step__number {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
-    letter-spacing: 0.08em;
-    color: var(--color-accent);
+.process-step__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Contenedor del Icono */
+.process-step__icon-wrapper {
+    margin-bottom: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+}
+
+.process-step__icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-surface);
 }
 
 .process-step__content {
-    display: grid;
-    gap: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
 }
 
+
+
 .process-step__title {
-    max-width: 24ch;
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-heading);
-    color: var(--color-text-primary);
+    color: var(--color-surface);
 }
 
 .process-step__description {
-    max-width: 50ch;
     font-size: var(--font-size-md);
     line-height: var(--line-height-body);
-    color: var(--color-text-secondary);
+    color: var(--color-surface);
+    opacity: 0.9;
+    margin-top: var(--space-2);
 }
