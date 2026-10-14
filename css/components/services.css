@@ -79,13 +79,6 @@
     gap: var(--space-4);
 }
 
-.service-card__number {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
-    letter-spacing: 0.08em;
-    color: var(--color-accent);
-}
 
 .service-card__category {
     font-size: var(--font-size-sm);
