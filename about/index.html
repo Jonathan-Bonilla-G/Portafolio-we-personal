@@ -445,63 +445,63 @@
         <main id="main-content" tabindex="-1">
 
 
-<!-- ABOUT HERO -->
-<section
-    class="about-hero section"
-    aria-labelledby="about-hero-title"
->
-    <div class="container about-hero__container">
+            <!-- ABOUT HERO -->
+            <section
+                class="about-hero section"
+                aria-labelledby="about-hero-title"
+            >
+                <div class="container about-hero__container">
 
-        <!-- COMPOSICIÓN VISUAL -->
-        <div class="about-hero__media">
+                    <!-- COMPOSICIÓN VISUAL -->
+                    <div class="about-hero__media">
 
-            <!-- Fotografía circular -->
-            <div class="about-hero__image">
-                <img
-                    src="/assets/images/hero/Retrato-cálido-en%20espacio-creativo.webp"
-                    alt="Jonathan Bonilla en su espacio creativo"
-                    width="800"
-                    height="1000"
-                    fetchpriority="high"
-                >
-            </div>
+                        <!-- Fotografía circular -->
+                        <div class="about-hero__image">
+                            <img
+                                src="/assets/images/hero/Retrato-cálido-en%20espacio-creativo.webp"
+                                alt="Jonathan Bonilla en su espacio creativo"
+                                width="800"
+                                height="1000"
+                                fetchpriority="high"
+                            >
+                        </div>
 
-            <!-- Elemento geométrico -->
-            <span
-                class="about-hero__shape"
-                aria-hidden="true"
-            ></span>
+                        <!-- Elemento geométrico -->
+                        <span
+                            class="about-hero__shape"
+                            aria-hidden="true"
+                        ></span>
 
-            <!-- Tarjeta con el contenido original -->
-            <div class="about-hero__card">
+                        <!-- Tarjeta con el contenido original -->
+                        <div class="about-hero__card">
 
-                <p class="about-hero__eyebrow">
-                    Sobre mí
-                </p>
+                            <p class="about-hero__eyebrow">
+                                Sobre mí
+                            </p>
 
-                <h1
-                    class="about-hero__title"
-                    id="about-hero-title"
-                >
-                    Desarrollo experiencias digitales
-                    con intención.
-                </h1>
+                            <h1
+                                class="about-hero__title"
+                                id="about-hero-title"
+                            >
+                                Desarrollo experiencias digitales
+                                con intención.
+                            </h1>
 
-                <p class="about-hero__description">
-                    Soy Jonathan Bonilla, desarrollador web enfocado
-                    en crear sitios claros, profesionales y pensados
-                    para las necesidades reales de cada proyecto.
-                </p>
+                            <p class="about-hero__description">
+                                Soy Jonathan Bonilla, desarrollador web enfocado
+                                en crear sitios claros, profesionales y pensados
+                                para las necesidades reales de cada proyecto.
+                            </p>
 
-            </div>
+                        </div>
 
-        </div>
+                    </div>
 
-    </div>
-</section>
+                </div>
+            </section>
             <!-- TRAYECTORIA -->
 
-            <section class="about-story section" aria-labelledby="about-story-title">
+            <section class="about-story section--compact" aria-labelledby="about-story-title">
                 <div class="container about-story__container">
                     <div class="about-story__header">
 
@@ -544,7 +544,7 @@
 
             <!-- ENFOQUE -->
 
-            <section class="about-approach section" aria-labelledby="about-approach-title">
+            <section class="about-approach section--compact" aria-labelledby="about-approach-title">
                 <div class="container about-approach__container">
                     <div class="about-approach__intro">
 
@@ -587,84 +587,97 @@
             </section>
 
 
-            <!-- HABILIDADES -->
+<!-- HABILIDADES -->
+<section class="about-skills section" aria-labelledby="about-skills-title">
+    <div class="container about-skills__container">
+        <div class="about-skills__intro">
+            <p class="about-skills__eyebrow">
+                Habilidades
+            </p>
+            <h2 class="about-skills__title" id="about-skills-title">
+                Capacidades que forman parte de cada proyecto.
+            </h2>
+        </div>
 
-            <section class="about-skills section" aria-labelledby="about-skills-title">
-                <div class="container about-skills__container">
-                    <div class="about-skills__intro">
-
-                        <p class="about-skills__eyebrow">
-                            Habilidades
-                        </p>
-
-                        <h2
-                            class="about-skills__title"
-                            id="about-skills-title"
-                        >
-                            Capacidades que forman parte
-                            de cada proyecto.
-                        </h2>
-
-                    </div>
-
-                    <div class="about-skills__list">
-
-                        <article class="about-skill">
-
-                            <h3 class="about-skill__title">
-                                Desarrollo web
-                            </h3>
-
-                            <p class="about-skill__description">
-                                Construcción de sitios web funcionales,
-                                responsive y mantenibles.
-                            </p>
-
-                        </article>
-
-                        <article class="about-skill">
-
-                            <h3 class="about-skill__title">
-                                Frontend
-                            </h3>
-
-                            <p class="about-skill__description">
-                                Desarrollo de interfaces claras y
-                                adaptadas a diferentes dispositivos.
-                            </p>
-
-                        </article>
-
-                        <article class="about-skill">
-
-                            <h3 class="about-skill__title">
-                                UX / UI
-                            </h3>
-
-                            <p class="about-skill__description">
-                                Organización de contenido y experiencias
-                                pensadas para facilitar la navegación.
-                            </p>
-
-                        </article>
-
-                        <article class="about-skill">
-
-                            <h3 class="about-skill__title">
-                                Arquitectura web
-                            </h3>
-
-                            <p class="about-skill__description">
-                                Estructuras digitales organizadas para
-                                comunicar, orientar y convertir.
-                            </p>
-
-                        </article>
-
-                    </div>
+        <div class="about-skills__list">
+            <!-- HABILIDAD 1: Desarrollo web -->
+            <article class="about-skill">
+                <div class="about-skill__banner" aria-hidden="true">
+                    <svg class="about-skill__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
                 </div>
-            </section>
+                <div class="about-skill__content">
+                    <h3 class="about-skill__title">
+                        Desarrollo web
+                    </h3>
+                    <p class="about-skill__description">
+                        Construcción de sitios web funcionales, responsive y mantenibles.
+                    </p>
+                </div>
+            </article>
 
+            <!-- HABILIDAD 2: Frontend -->
+            <article class="about-skill">
+                <div class="about-skill__banner" aria-hidden="true">
+                    <svg class="about-skill__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                        <line x1="8" x2="16" y1="21" y2="21"></line>
+                        <line x1="12" x2="12" y1="17" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="about-skill__content">
+                    <h3 class="about-skill__title">
+                        Frontend
+                    </h3>
+                    <p class="about-skill__description">
+                        Desarrollo de interfaces claras y adaptadas a diferentes dispositivos.
+                    </p>
+                </div>
+            </article>
+
+            <!-- HABILIDAD 3: UX / UI -->
+            <article class="about-skill">
+                <div class="about-skill__banner" aria-hidden="true">
+                    <svg class="about-skill__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                </div>
+                <div class="about-skill__content">
+                    <h3 class="about-skill__title">
+                        UX / UI
+                    </h3>
+                    <p class="about-skill__description">
+                        Organización de contenido y experiencias pensadas para facilitar la navegación.
+                    </p>
+                </div>
+            </article>
+
+            <!-- HABILIDAD 4: Arquitectura web -->
+            <article class="about-skill">
+                <div class="about-skill__banner" aria-hidden="true">
+                    <svg class="about-skill__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="7" height="7" x="3" y="3" rx="1"></rect>
+                        <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+                        <rect width="7" height="7" x="14" y="14" rx="1"></rect>
+                        <path d="M3 14h7v7H3z"></path>
+                    </svg>
+                </div>
+                <div class="about-skill__content">
+                    <h3 class="about-skill__title">
+                        Arquitectura web
+                    </h3>
+                    <p class="about-skill__description">
+                        Estructuras digitales organizadas para comunicar, orientar y convertir.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
             <!-- VALORES  -->
 

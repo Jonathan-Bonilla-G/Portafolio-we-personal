@@ -272,6 +272,18 @@
    ABOUT — INTRODUCTION
    ======================================== */
 
+   .about-story__eyebrow,
+   .about-approach__eyebrow,
+   .about-values__eyebrow{
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
 .about-introduction__container,
 .about-story__container,
 .about-approach__container {
@@ -345,36 +357,135 @@
 /* ========================================
    ABOUT — SKILLS
    ======================================== */
+/* ========================================
+   ABOUT — SKILLS (Tarjetas con Grid y Banner)
+   ======================================== */
 
 .about-skills {
     background-color: var(--color-surface);
+    padding-block: var(--space-16);
 }
 
-.about-skills__container,
+.about-skills__container {
+    display: grid;
+    gap: var(--space-10);
+}
+
+.about-skills__intro {
+    max-width: 720px;
+}
+
+.about-skills__eyebrow {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.about-skills__title {
+    max-width: 22ch;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+}
+
+/* Rejilla de tarjetas para Habilidades */
+.about-skills__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .about-skills__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tarjeta individual */
+.about-skill {
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: none; /* Reemplaza el borde superior anterior por tarjeta completa */
+    padding: 0;
+    transition: transform var(--transition-base) var(--ease-standard),
+                box-shadow var(--transition-base) var(--ease-standard);
+}
+
+.about-skill:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Franja de color superior con icono integrado */
+.about-skill__banner {
+    height: 90px;
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-skill__icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-surface);
+}
+
+/* Contenido centrado de la tarjeta */
+.about-skill__content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.about-skill__title {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.about-skill__description {
+    max-width: 45ch;
+    margin: 0;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-body);
+    color: var(--color-text-secondary);
+}
+
 .about-values__container {
     display: grid;
     gap: var(--space-10);
 }
 
-.about-skills__list,
 .about-values__list {
     display: grid;
     gap: var(--space-6);
 }
 
-.about-skill,
 .about-value {
     padding-block: var(--space-6);
     border-top: var(--border-width-sm) solid var(--border-color-subtle);
 }
 
-.about-skill__title,
 .about-value__title {
     margin: 0 0 var(--space-3);
     font-size: var(--font-size-2xl);
 }
 
-.about-skill__description,
 .about-value__description {
     max-width: 45ch;
     margin: 0;
