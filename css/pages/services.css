@@ -8,7 +8,18 @@
    ======================================== */
 
 .services-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
     padding-block: var(--space-24);
+
+    background-color: var(--color-background);
+    background-image: url("/assets/images/hero/paleta-marca-02.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
 .services-hero__container {
@@ -17,6 +28,9 @@
 }
 
 .services-hero__content {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     max-width: 1000px;
     margin-inline: auto;
@@ -52,7 +66,7 @@
     margin-inline: auto;
     margin-top: var(--space-8);
     font-size: var(--font-size-lg);
-    line-height: 1.6;
+    line-height: var(--line-height-body);
     color: #555555;
 }
 
@@ -118,11 +132,12 @@
 
 
 /* ========================================
-   SERVICES CATALOG
+   SERVICES CATALOG (Grid Compacto)
    ======================================== */
 
 .services-catalog {
     background-color: var(--color-surface);
+    padding-block: var(--space-16);
 }
 
 .services-catalog__container {
@@ -136,54 +151,47 @@
 
 .services-catalog__eyebrow {
     margin-bottom: var(--space-4);
-
     color: var(--color-accent);
-
     font-family: var(--font-primary);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
-
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .services-catalog__title {
     margin: 0;
-
     color: var(--color-text-primary);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.03em;
 }
 
 
 /* ========================================
-   SERVICES LIST
+   SERVICES LIST (Rejilla de Tarjetas)
    ======================================== */
 
 .services-catalog__list {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-6);
 }
 
-
 /* ========================================
-   SERVICE CARD
+   SERVICE CARD (Compacta para Escaparate)
    ======================================== */
 
 .service-card {
-    display: grid;
-    gap: var(--space-8);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: var(--space-8);
-
-    border:
-        var(--border-width-sm)
-        solid
-        var(--border-color-default);
-
+    border: var(--border-width-sm) solid var(--border-color-default);
     border-radius: var(--radius-lg);
-
     background-color: var(--color-background);
-
+    height: 100%;
     transition:
         transform var(--transition-base) var(--ease-standard),
         border-color var(--transition-base) var(--ease-standard),
@@ -191,94 +199,51 @@
 }
 
 .service-card:hover {
-    transform: translateY(-2px);
-
+    transform: translateY(-4px);
     border-color: var(--border-color-strong);
-
     box-shadow: var(--shadow-sm);
 }
 
-.service-card__number {
-    margin: 0;
-
-    color: var(--color-accent);
-
-    font-family: var(--font-primary);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
-
-    letter-spacing: 0.08em;
-}
-
 .service-card__content {
-    max-width: 720px;
+    max-width: 100%;
 }
 
 .service-card__category {
-    margin: 0 0 var(--space-3);
-
+    margin: 0 0 var(--space-2);
     color: var(--color-text-secondary);
-
     font-family: var(--font-primary);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-ui);
-
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
 .service-card__title {
     margin: 0;
-
     color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 .service-card__tagline {
-    margin-top: var(--space-3);
-
+    margin-top: var(--space-2);
     color: var(--color-text-primary);
-
     font-family: var(--font-editorial);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-editorial);
+    font-size: var(--font-size-lg);
     line-height: var(--line-height-editorial);
 }
 
 .service-card__description {
-    max-width: 620px;
-    margin-top: var(--space-5);
-
+    max-width: 100%;
+    margin-top: var(--space-3);
     color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
 }
 
+/* Ocultamos las viñetas en la vista de catálogo principal para mantenerlo compacto */
 .service-card__features {
-    display: grid;
-    gap: var(--space-3);
-
-    margin: var(--space-6) 0 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.service-card__features li {
-    position: relative;
-
-    padding-left: var(--space-6);
-
-    color: var(--color-text-primary);
-}
-
-.service-card__features li::before {
-    content: "→";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    color: var(--color-accent);
+    display: none;
 }
 
 .service-card__footer {
@@ -286,32 +251,24 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-5);
-
+    gap: var(--space-4);
     padding-top: var(--space-6);
-
-    border-top:
-        var(--border-width-sm)
-        solid
-        var(--border-color-subtle);
+    margin-top: var(--space-6);
+    border-top: var(--border-width-sm) solid var(--border-color-subtle);
 }
 
 .service-card__price {
     display: grid;
-    gap: var(--space-1);
-
+    gap: 0;
     margin: 0;
-
     color: var(--color-text-secondary);
-
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: var(--line-height-ui);
 }
 
 .service-card__price strong {
     color: var(--color-text-primary);
-
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
 }
 
@@ -327,7 +284,6 @@
 .service-card--featured:hover {
     border-color: var(--color-accent);
 }
-
 
 /* ========================================
    SERVICES GUIDE
@@ -446,6 +402,16 @@
 
 @media (min-width: 768px) {
 
+    .services-hero {
+        padding-block: var(--space-16);
+        background-position: center;
+    }
+
+    .services-hero__title {
+        font-size: clamp(2.5rem, 9vw, 3.5rem);
+    }
+
+
     .services-introduction__container {
         grid-template-columns:
             minmax(0, 1fr)
@@ -457,8 +423,10 @@
     }
 
     .services-catalog__list {
-        gap: var(--space-8);
+        grid-template-columns: repeat(2, 1fr);
     }
+
+
 
     .service-card {
         grid-template-columns:
@@ -470,9 +438,6 @@
         padding: var(--space-10);
     }
 
-    .service-card__number {
-        padding-top: var(--space-1);
-    }
 
     .service-card__content {
         grid-column: 2;
@@ -506,6 +471,10 @@
 
     .services-hero__content {
         max-width: 900px;
+    }
+
+    .services-catalog__list {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .service-card {

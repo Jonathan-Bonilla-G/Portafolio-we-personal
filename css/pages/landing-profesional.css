@@ -14,7 +14,6 @@
     min-height: calc(100svh - 80px);
 
     display: flex;
-
     align-items: center;
 
     background:
@@ -68,15 +67,12 @@
     display: flex;
 
     justify-content: flex-start;
-
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: var(--space-2);
 
     margin: 0;
-
     padding: 0;
 
     list-style: none;
@@ -90,7 +86,6 @@
     letter-spacing: 0.08em;
 
     text-transform: uppercase;
-
 }
 
 
@@ -161,9 +156,7 @@
 
 
 .product-eyebrow--light {
-
     color: #D39A78;
-
 }
 
 
@@ -173,7 +166,7 @@
 
 .product-hero__title {
 
-    max-width: 16ch;
+    max-width: 14ch;
 
     margin-inline: auto;
 
@@ -231,7 +224,7 @@
 
     flex-wrap: wrap;
 
-    gap: var(--space-4);
+    gap: var(--space-6);
 
     margin-bottom: var(--space-8);
 
@@ -242,7 +235,7 @@
 .product-hero__time,
 .product-hero__revisions {
 
-    min-width: 190px;
+    min-width: 210px;
 
     padding:
         var(--space-5)
@@ -312,7 +305,7 @@
 
 .product-hero__cta {
 
-    min-width: 300px;
+    min-width: 260px;
 
     border-radius: 999px;
 
@@ -370,7 +363,9 @@
    Sección de problema.
    Utilizamos una superficie ligeramente diferenciada
    para separar el diagnóstico del resto del contenido.
-*/
+Arreglar
+
+   */
 
 .product-section--problem {
 
@@ -997,6 +992,8 @@
 
 /* =========================================================
    19. FAQ
+
+   Arreglarr
    ========================================================= */
 
 .product-section--faq .product-feature {

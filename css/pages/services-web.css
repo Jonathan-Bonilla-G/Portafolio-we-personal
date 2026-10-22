@@ -1,10 +1,6 @@
 /* =========================================================
-   LANDING ESENCIAL — LUXURY BRAND
-   ========================================================= */
-
-/* =========================================================
-   LANDING ESENCIAL
-   Product Page — Premium Editorial
+   SERVICIOS WEB
+   Páginas de producto y landing
    ========================================================= */
 
 
@@ -204,7 +200,8 @@
 }
 
 .product-hero__price,
-.product-hero__time {
+.product-hero__time,
+.product-hero__revisions {
     min-width: 210px;
 
     padding: var(--space-5) var(--space-6);
@@ -310,44 +307,12 @@
 }
 
 
-/* Qué incluye */
 
-.product-section:nth-of-type(3) {
-    background-color:
-        var(--color-background);
+
+.product-section--color{
+    background: #F2F1ED;
 }
 
-
-/* El valor */
-
-.product-section:nth-of-type(4) {
-    background:
-        #F3ECE7;
-}
-
-
-/* Proceso */
-
-.product-section:nth-of-type(6) {
-    background:
-        #F2F1ED;
-}
-
-
-/* Alcance */
-
-.product-section:nth-of-type(7) {
-    background:
-        var(--color-background);
-}
-
-
-/* FAQ */
-
-.product-section:nth-of-type(8) {
-    background:
-        #F3ECE7;
-}
 
 
 /* =========================================================
@@ -501,8 +466,6 @@
 .product-feature {
     position: relative;
 
-    min-height: 100%;
-
     padding: var(--space-6);
 
     background:
@@ -580,7 +543,7 @@
    15. EL VALOR
    ========================================================= */
 
-.product-section:nth-of-type(4) .product-feature {
+.product-section--value .product-feature {
     background:
         rgba(255, 255, 255, 0.72);
 }
@@ -807,12 +770,12 @@
    20. FAQ
    ========================================================= */
 
-.product-section:nth-of-type(8) .product-feature {
+.product-section--faq .product-feature {
     background-color:
         var(--color-surface);
 }
 
-.product-section:nth-of-type(8) .product-feature h3 {
+.product-section--faq .product-feature h3 {
     font-size: var(--font-size-lg);
 
     line-height: 1.35;
@@ -831,7 +794,146 @@
 
 
 /* =========================================================
-   25. TABLET — 1024px
+   PROBLEM + DIFFERENTIATION CARDS — WEB PROFESIONAL
+   ========================================================= */
+
+.problem-cards__inner,
+.difference-cards__inner {
+    display: grid;
+
+    gap:
+        clamp(
+            var(--space-8),
+            5vw,
+            var(--space-12)
+        );
+}
+
+.problem-cards__header,
+.difference-cards__header {
+    max-width: 850px;
+}
+
+.problem-cards__header h2,
+.difference-cards__header h2 {
+    max-width: 19ch;
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            var(--font-size-3xl),
+            4.5vw,
+            var(--font-size-6xl)
+        );
+
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+
+    text-wrap: balance;
+}
+
+.problem-cards__lead,
+.difference-cards__lead {
+    max-width: 740px;
+
+    margin:
+        var(--space-5)
+        0
+        0;
+
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.problem-cards__grid,
+.difference-cards__grid {
+    display: grid;
+
+    gap: var(--space-5);
+}
+
+.problem-cards__grid {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+.difference-cards__grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.problem-card,
+.difference-card {
+    display: flex;
+
+    min-height: 290px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding:
+        clamp(
+            var(--space-6),
+            3vw,
+            var(--space-8)
+        );
+
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+
+    background-color: #fff;
+
+    transition:
+        transform var(--transition-base)
+        var(--ease-standard);
+}
+
+.problem-card__icon,
+.difference-card__icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: var(--space-8);
+
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.problem-card h3,
+.difference-card h3 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            var(--font-size-xl),
+            2vw,
+            var(--font-size-2xl)
+        );
+
+    line-height: 1.2;
+}
+
+.problem-card p,
+.difference-card p {
+    max-width: 38ch;
+
+    margin:
+        var(--space-3)
+        0
+        0;
+
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+}
+
+/* =========================================================
+   RESPONSIVE
+   Breakpoints de mayor a menor, seguidos por preferencias de interacción.
    ========================================================= */
 
 @media (max-width: 1024px) {
@@ -855,45 +957,28 @@
             repeat(2, minmax(0, 1fr));
     }
 
-    .product-scope-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
 }
-
-
-/* =========================================================
-   26. TABLET — 768px
-   ========================================================= */
 
 @media (max-width: 768px) {
 
-    .product-hero__content {
-        text-align: center;
-    }
-
-    .product-breadcrumb__list {
-        justify-content: flex-start;
-    }
-
-    .product-hero__meta {
-        justify-content: center;
-    }
-
-    .product-feature-grid {
+    .product-feature-grid,
+    .product-scope-grid,
+    .problem-cards__grid,
+    .difference-cards__grid {
         grid-template-columns: 1fr;
     }
 
-    .product-scope-grid {
-        grid-template-columns: 1fr;
+    .problem-card,
+    .difference-card {
+        min-height: 0;
+    }
+
+    .problem-card__icon,
+    .difference-card__icon {
+        margin-bottom: var(--space-6);
     }
 
 }
-
-
-/* =========================================================
-   27. MOBILE — 640px
-   ========================================================= */
 
 @media (max-width: 640px) {
 
@@ -906,15 +991,9 @@
     }
 
     .product-breadcrumb__list {
-        justify-content: flex-start;
-
         font-size: 0.68rem;
 
         letter-spacing: 0.07em;
-    }
-
-    .product-hero__content {
-        text-align: center;
     }
 
     .product-eyebrow {
@@ -960,11 +1039,6 @@
         width: 100%;
     }
 
-
-    /* -----------------------------------------
-       SECTIONS
-       ----------------------------------------- */
-
     .product-section {
         padding-block: var(--space-16);
     }
@@ -979,28 +1053,13 @@
         font-size: var(--font-size-md);
     }
 
-
-    /* -----------------------------------------
-       CARDS
-       ----------------------------------------- */
-
     .product-feature {
         padding: var(--space-6);
     }
 
-
-    /* -----------------------------------------
-       SPLIT
-       ----------------------------------------- */
-
     .product-split {
         gap: var(--space-8);
     }
-
-
-    /* -----------------------------------------
-       PROCESS
-       ----------------------------------------- */
 
     .product-process > li {
         grid-template-columns:
@@ -1010,31 +1069,34 @@
         gap: var(--space-3);
     }
 
-
-    /* -----------------------------------------
-       SCOPE
-       ----------------------------------------- */
-
     .product-scope {
         padding: var(--space-6);
     }
 
-
 }
 
+@media (hover: hover) {
 
-/* =========================================================
-   28. REDUCCIÓN DE MOVIMIENTO
-   ========================================================= */
+    .problem-card:hover,
+    .difference-card:hover {
+        transform: translateY(-4px);
+    }
+
+}
 
 @media (prefers-reduced-motion: reduce) {
 
     .product-feature,
-    .product-breadcrumb__list a {
+    .product-breadcrumb__list a,
+    .problem-card,
+    .difference-card {
         transition: none;
     }
 
-    .product-feature:hover {
+    .product-feature:hover,
+    .problem-card:hover,
+    .difference-card:hover {
         transform: none;
     }
+
 }
